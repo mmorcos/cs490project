@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../CSS/BootstrapCSS/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../CSS/viewportCSS/ie10-viewport-bug-workaround.css">
+   <!--  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="../CSS/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Create Question</a></li>
+            <li role="presentation"><a href="#">Create Exam</a></li>
+            <li role="presentation"><a href="#">Grade Exam</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Exam System</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Fill out the form!</h1>
+          
+        <form id="questionform" class="form-signin" method="post" action="sendform.php">
+		<h1 class="form-signin-heading text-muted"></h1>
+        <select class="form-control" name="category">
+            <option value="Category">Category</option>
+            <option value="for">for</option>
+            <option value="while">while</option>
+            <option value="syntax">syntax</option>
+            <option value="if">if</option>
+            <option value="other">Other</option>
+        </select>
+        <br >
+        <select class="form-control" name="difficulty">
+            <option value="Difficulty">Difficulty</option>
+            <option value="Easy">Easy</option>
+          <!--  <option value="Easy">Medium</option>
+            <option value="Hard">Hard</option>
+            <option value="James_Gosling_Hard">James Gosling Hard</option> -->
+        </select>
+        <br >
+      <input type="text" name="methodName" id="methodName" class="form-control" placeholder="Method Name" required="" autofocus="">
+        <br >
+      <input type="text" name="parameters" id="parameters" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
+        <br >
+      <textarea rows="4" class="form-control" cols="50" name="question" form="questionform">Type the question in the form "Write a method named X that takes parameters of this type (int foo, String bar) that does Z."</textarea>
+            <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
+
+        <!-- <p><a class="btn btn-lg btn-success" type="submit" role="button">Submit</a></p> -->
+
+          </form>
+      </div>
+        
+
+        
+
+    
+
+      <footer class="footer">
+        <p>&copy; 2017 MSA, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+  </body>
+</html>
