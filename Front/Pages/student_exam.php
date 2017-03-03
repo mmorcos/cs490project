@@ -2,6 +2,17 @@
 <html lang="en">
 
   <head>
+   <script type="text/javascript">
+        function codeAddress() {
+            var out='';
+            //window.alert("The Exam is About To Start");
+            out+= '<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            out+='<iframe style="background-color:white;" width="600" height="600" name="currentExam" src="request.php?action=8" id="prev"> </iframe>';
+            document.getElementById("exam").innerHTML = out;
+            document.getElementById("stort").style.display = 'none';
+        }
+        </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,25 +44,20 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onload="showExam()">
     <div class="container">
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Create Question</a></li>
-            <li role="presentation"><a href="#">Create Exam</a></li>
-            <li role="presentation"><a href="#">Grade Exam</a></li>
+            <li role="presentation"><a href="#">Take Exam</a></li>
+            <li role="presentation"><a href="#">Release Grade</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">Exam System</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>Welcome!</h1>
-        <p class="lead">This is our new cutting edge online examination system designed to bring your students as much pain as possible. Please select from one of the following options.</p>
-        <p><a class="btn btn-lg btn-success" href="questionform.html" role="button">Submit a Question</a></p>
-        <p><a class="btn btn-lg btn-success" href="placeholder.html" role="button">Compile an Exam</a></p>
-        <p><a class="btn btn-lg btn-success" href="placeholder.html" role="button">Grade Release</a></p>
+        <h1>Get Ready!</h1>
 
       </div>
 

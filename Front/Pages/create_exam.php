@@ -1,27 +1,36 @@
 <?php 
-  //*******************************************cURL nonsense goes here***********************************************************
-  $url = "/PATH/TO/URL";
+  //****************************************** cURL nonsense goes here **********************************************************
+  /*$url = "web.njit.edu/~st456/index.php";
   fields = array('action' => $action, 'type' => $type); 
   foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&';}  // URL-ify DATA FOR the POST.
    rtrim($fields_string, '&');
 
    $ch = curl_init(); 
+  curl_setopt($ch,CURLOPT_URL, $url);                                         // SET URL FOR OUTSIDE PHP FILE.
+   curl_setopt($ch,CURLOPT_POST, count($fields));                              // SET # OF POST VARIABLES.
+   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);                        // SET POST DATA.
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                             // SET result <- cURL Output.
+   $result = curl_exec($ch);                                                   // EXECUTE cURL SESSION.
+   curl_close($ch);        
+   
+//*******************************************************************************************************************************
 
 
-
-
-  //First some setup 
+  //********************************************** Init Vals ********************************************************************
   $quest = array();
   index = 0; 
   $delimiter = "##"; //maybe change this later? 
   $tokens = strtok($result, $delimeiter); 
-
+//*******************************************************************************************************************************
+//************************************************ Doing Some Stuff Now *********************************************************
   while ($tokens !== false)
   {
       $quest[$index] = $tokens;
       $tokens = strtok($delimeter); 
+      index++; 
   }
-?>
+  */
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +56,12 @@
           var i; 
           var output=''; 
           output = output +'<form action="placeholder.php id="questions">'; //placeholder and id="questions" NEEDS to match n middle.php
-          for (i=0; i<)
+          for (i=0; i< f.length-1; i++)
+          {
+            output = output + '<fieldset> <input type="radio" name="question" value="'+f[i]+'">;'+f[i]+'</fieldset><br />';
+            output = output + '</form>';
+            document.getElementByID("bank").innerHTML = output; 
+          }
         }
       </script>
     <meta charset="utf-8">
@@ -93,6 +107,7 @@
         </nav>
         <h3 class="text-muted">Exam System</h3>
       </div>
+      
       <!--
       <iframe src="pfview.html" height="500" width="325"></iframe>
       <iframe src="pfview.html" height="500" width="325"></iframe>

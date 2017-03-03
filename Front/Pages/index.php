@@ -1,4 +1,53 @@
+<?php 
 
+/*include_once 'dbconnection.php';
+include_once 'cURL.php'; 
+
+session_start();
+if (isset($_SESSION['user'])!="")
+{
+  $ucid=$SESSION['user'];
+  $level = getLevelOfAccess($ucid);
+  if ($level==1)
+  {
+    header("Location: instructor.php");
+  }
+  else 
+  {
+    header("Location: student.php");
+  }
+}
+
+if(isset($_POST['btn-login']))
+{
+  $ucid = mysql_real_escape_string($_POST['ucid']);
+  $password = mysql_real_escape_string($_POST['password']);
+  $ucid = trim($ucid);
+  $password = trim($password);
+
+  $db_record = toDB($ucid, $password);
+  level = getLevelOfAccess(12, $ucid); 
+
+//maybe just differentiate by username: instructor=abc123 student=def456? later...
+
+  if($db_records == 1 && $level == 1)
+  {
+    $_SESSION['user'] = $ucid; 
+    header("Location: instructor.php");
+  }
+  else if ($db_records == 1 && $level == 2)
+  {
+    $_session['user'] = $ucid;
+  }
+  else{
+    ?>
+        <script>alert('Username/Password Incorrect!');</script>
+    <?php
+
+  }
+}
+*/
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,8 +146,8 @@
 
 	<form class="form-signin" method="post" action="sof.php">
 		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
-		<input type="password" class="form-control" placeholder="Password" required="">
+		<input type="text" id="ucid" name="ucid" class="form-control" placeholder="UCID" required="" autofocus="">
+		<input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
 		<button class="btn btn-lg btn-primary btn-block" type="submit">
 			Sign In
 		</button>
