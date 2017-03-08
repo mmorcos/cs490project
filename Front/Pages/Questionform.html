@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title> Add Exam Questions</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../CSS/BootstrapCSS/bootstrap.min.css" rel="stylesheet">
@@ -49,15 +49,14 @@
       <div class="jumbotron">
         <h1>Fill out the form!</h1>
           
-        <form id="questionform" class="form-signin" method="post" action="sendform.php">
+        <form id="question" class="form-signin" method="post" action="sendform.php">
 		<h1 class="form-signin-heading text-muted"></h1>
         <select class="form-control" name="category" id="category">
             <option value="Category">Category</option>
-            <option value="for">for</option>
-            <option value="while">while</option>
-            <option value="syntax">syntax</option>
-            <option value="if">if</option>
-            <option value="other">Other</option>
+            <option value="Loops">Loops</option>
+            <option value="Arrays">Arrays</option>
+            <option value="If Statements">If Statements</option>
+            <option value="Other">Other</option>
         </select>
         <br >
         <select class="form-control" name="difficulty" id="difficulty">
@@ -72,7 +71,7 @@
         <br >
       <input type="text" name="parameters" id="parameters" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
         <br >
-      <textarea rows="4" class="form-control" cols="50" name="question" form="questionform">Type the question in the form "Write a method named X that takes parameters of this type (int foo, String bar) that does Z."</textarea>
+      <textarea placeholder="Questions are of the following form: Write a method name A that takes N amount of parameters that perform this function and returns/prints Z" rows="4" class="form-control" cols="50" name="question" id="question" form="question"></textarea>
             <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
 
         <!-- <p><a class="btn btn-lg btn-success" type="submit" role="button">Submit</a></p> -->
@@ -81,13 +80,6 @@
       </div>
         
 
-        
-
-    
-
-      <footer class="footer">
-        <p>&copy; 2017 MSA, Inc.</p>
-      </footer>
 
     </div> <!-- /container -->
 

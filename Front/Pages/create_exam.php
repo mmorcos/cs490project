@@ -1,6 +1,7 @@
 <?php 
-  //****************************************** cURL nonsense goes here **********************************************************
-  /*$url = "web.njit.edu/~st456/index.php";
+  //****************************************** cURL nonsense goes here ******************************************************
+  /*
+  $url = "https://web.njit.edu/~ac482/CS490/questionretrieve.php";
   fields = array('action' => $action, 'type' => $type); 
   foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&';}  // URL-ify DATA FOR the POST.
    rtrim($fields_string, '&');
@@ -13,16 +14,15 @@
    $result = curl_exec($ch);                                                   // EXECUTE cURL SESSION.
    curl_close($ch);        
    
-//*******************************************************************************************************************************
 
 
-  //********************************************** Init Vals ********************************************************************
+  //********************************************** Init Vals ****************************************************************
   $quest = array();
   index = 0; 
   $delimiter = "##"; //maybe change this later? 
   $tokens = strtok($result, $delimeiter); 
-//*******************************************************************************************************************************
-//************************************************ Doing Some Stuff Now *********************************************************
+//****************************************************************************************************************************
+//************************************************ Doing Some Stuff Now ******************************************************
   while ($tokens !== false)
   {
       $quest[$index] = $tokens;
@@ -40,7 +40,7 @@
         display:inline-block;
           }
       </style>
-      <script> 
+     <!--  <script> 
 
       var e = "<?php 
         for ($i = 0; $i < $index-1; $i++) 
@@ -63,7 +63,7 @@
             document.getElementByID("bank").innerHTML = output; 
           }
         }
-      </script>
+      </script> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,6 +108,44 @@
         <h3 class="text-muted">Exam System</h3>
       </div>
       
+      <?php
+
+
+        include_once 'questionretrieve.php';
+
+        $q1 = "Q1: ";
+        $q2 = "Q2: "; 
+        $q3 = "Q3: ";
+        $q4 = "Q4: "; 
+
+
+
+
+        echo $q1 . $fields[0] . "<br /> \n";
+        echo $q2 . $fields[1] . "<br /> \n";
+
+
+          /*$url = 'https://web.njit.edu/~ac482/CS490/questionretrieve.php';
+          //open connection
+          $ch = curl_init();
+
+          //set the url, number of POST vars, POST data
+          curl_setopt($ch,CURLOPT_URL, $url);
+          curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
+          curl_setopt($ch,CURLOPT_POST, count($fields));
+          curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+          $output = curl_exec($ch);  
+
+
+          //execute post
+          $result = curl_exec($ch);
+          curl_close($ch);
+          var_dump($output);
+*/
+  
+
+
+      ?> 
       <!--
       <iframe src="pfview.html" height="500" width="325"></iframe>
       <iframe src="pfview.html" height="500" width="325"></iframe>

@@ -1,7 +1,7 @@
 <?php //extract data from the post
 //set POST variables
-//$url = 'https://web.njit.edu/~mm723/middle.php';
-curl_setopt($loginDB, CURLOPT_URL, "https://web.njit.edu/~ac482/CS490/middle.php");
+$url = "http://localhost:8888/CS490/Front/Testing/middle.php";
+//curl_setopt($loginDB, CURLOPT_URL, "http://localhost:8888/CS490/Front/Testing/middle.php");
 
 $fields = array(
 	'username' => $_POST['username'],
@@ -10,7 +10,7 @@ $fields = array(
 
 $send = json_encode($fields);
 
-
+var_dump($send);
 //url-ify the data for the POST
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
@@ -19,8 +19,8 @@ rtrim($fields_string, '&');
 $ch = curl_init();
 
 //set the url, number of POST vars, POST data
-curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
 curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
 curl_setopt($ch,CURLOPT_POST, count($fields));
 curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
