@@ -39,7 +39,14 @@ curl_close($ch);
 include_once 'https://web.njit.edu/~ac482/CS490/Connect.php';
 include_once 'https://web.njit.edu/~ac482/CS490/LoginCheck.php';
 
-echo "\n";
+$retrieve = file_get_contents("php://input");
+var_dump($retrieve);
+var_dump($userType);
+
+//$tmp = $result; 
+//if ($tmp == 'Invalid Login1')
+
+/*echo "\n";
 
 var_dump($ch);
 
@@ -53,7 +60,7 @@ elseif ($result == 'Professor')
 }
 
 //print_r($result);
-/*$everything = get_defined_vars();
+$everything = get_defined_vars();
 ksort($everything);
 echo '<pre>';
 print_r($everything);
