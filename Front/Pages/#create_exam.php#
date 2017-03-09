@@ -1,3 +1,42 @@
+<?php
+session_start():
+       include_once 'web.njit.edu/~ac482/CS490/questionretrieve.php';
+print_r($_SESSION['fields']
+
+
+        $q1 = "Q1: ";
+        $q2 = "Q2: "; 
+        $q3 = "Q3: ";
+        $q4 = "Q4: "; 
+        $q5 = "Q5: ";
+
+
+
+
+
+
+          /*$url = 'https://web.njit.edu/~ac482/CS490/questionretrieve.php';
+          //open connection
+          $ch = curl_init();
+
+          //set the url, number of POST vars, POST data
+          curl_setopt($ch,CURLOPT_URL, $url);
+          curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
+          curl_setopt($ch,CURLOPT_POST, count($fields));
+          curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+          $output = curl_exec($ch);  
+
+
+          //execute post
+          $result = curl_exec($ch);
+          curl_close($ch);
+          var_dump($output);
+*/
+  
+
+
+      ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +49,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title> Add Exam Questions</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../CSS/BootstrapCSS/bootstrap.min.css" rel="stylesheet">
@@ -47,47 +86,33 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Fill out the form!</h1>
+        <h3>Select your exam questions</h3>
           
-        <form id="questionform" class="form-signin" method="post" action="sendform.php">
-		<h1 class="form-signin-heading text-muted"></h1>
-        <select class="form-control" name="category" id="category">
-            <option value="Category">Category</option>
-            <option value="for">for</option>
-            <option value="while">while</option>
-            <option value="syntax">syntax</option>
-            <option value="if">if</option>
-            <option value="other">Other</option>
-        </select>
-        <br >
-        <select class="form-control" name="difficulty" id="difficulty">
-            <option value="Difficulty">Difficulty</option>
-            <option value="Easy">Easy</option>
-          <!--  <option value="Easy">Medium</option>
-            <option value="Hard">Hard</option>
-            <option value="James_Gosling_Hard">James Gosling Hard</option> -->
-        </select>
-        <br >
-      <input type="text" name="methodName" id="methodName" class="form-control" placeholder="Method Name" required="" autofocus="">
-        <br >
-      <input type="text" name="parameters" id="parameters" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
-        <br >
-      <textarea rows="4" class="form-control" cols="50" name="question" form="questionform">Type the question in the form "Write a method named X that takes parameters of this type (int foo, String bar) that does Z."</textarea>
-            <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
+              <form action="/send_exam.php" method="POST">
 
-        <!-- <p><a class="btn btn-lg btn-success" type="submit" role="button">Submit</a></p> -->
+          <input type="checkbox" id="q1" name="q[]"> <?php echo $q1 . $fields[0] . "<br /> \n"; ?><br>
+          <input type="checkbox" id="q2" name="q[]"> <?php echo $q2 . $fields[1] . "<br /> \n"; ?><br>
+          <input type="checkbox" id="q3" name="q[]"> <?php echo $q3 . $fields[2] . "<br /> \n"; ?><br>
+          <input type="checkbox" id="q4" name="q[]"> <?php echo $q4 . $fields[3] . "<br /> \n"; ?><br>
+          <input type="checkbox" id="q5" name="q[]"> <?php echo $q4 . $fields[4] . "<br /> \n"; ?><br>
+          <input type="checkbox" id="q6" name="q[]"> <?php echo $q5 . $fields[5] . "<br /> \n"; ?><br>
+      <label for="version">Select Version</label>
+        <select name="version">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+      </select>
+      <br />
+
+      <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
+    
+    </form>
 
           </form>
       </div>
         
 
-        
-
-    
-
-      <footer class="footer">
-        <p>&copy; 2017 MSA, Inc.</p>
-      </footer>
 
     </div> <!-- /container -->
 
