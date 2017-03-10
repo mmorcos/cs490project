@@ -20,7 +20,7 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="#">Take Exam </a></li>
+            <li role="presentation"><a href="student_exam.php">Take Exam </a></li>
             <li role="presentation"><a href="#">View Grade</a></li>
           </ul>
         </nav>
@@ -30,7 +30,7 @@
       <div class="jumbotron">
         <h1>Welcome!</h1>
         <p class="lead">Choose from the following </p>
-        <p><a class="btn btn-lg btn-success" href="placeholder.html" role="button">Take Exam </a></p>
+        <p><a class="btn btn-lg btn-success" href="student_exam.php" role="button">Take Exam </a></p>
         <p><a class="btn btn-lg btn-success" href="placeholder.html" role="button">View Grade </a></p>
 
       </div>

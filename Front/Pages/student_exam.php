@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title> Add Exam Questions</title>
+    <title>Take Exam</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../CSS/BootstrapCSS/bootstrap.min.css" rel="stylesheet">
@@ -36,20 +36,13 @@
   <body>
     <div class="container">
       <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Create Question</a></li>
-            <li role="presentation"><a href="#">Create Exam</a></li>
-            <li role="presentation"><a href="#">Grade Exam</a></li>
-          </ul>
-        </nav>
+
         <h3 class="text-muted">Exam System</h3>
       </div>
 
       <div class="jumbotron">
-        <h3>Select your exam questions</h3>
-          
-              <form action="send_exam.php" method="POST">
+          <h3> Good Luck!</h3>
+              <form action="submit_exam.php" method="POST">
               
               
               <?php 

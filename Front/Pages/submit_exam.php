@@ -1,12 +1,17 @@
-<?php
+<?php 
 
-include 'LoginCheck.php';
+/*
+foreach($_POST['q'] as $key => $item){
+  echo $item; 
+  print "<tr><td>" . $key . "</td><td>" . $item['q'] . "</td><td>" . $item['q'] . "</td></tr>";
+
+}
+    */
 
 
 $url = "https://web.njit.edu/~st456/index.php";
 $fields = array(
-	'username' => $_POST['username'],
-	'password' => $_POST['password'],
+  'question' => $_POST['q'],
 );
 //$send = json_encode($fields);
 
@@ -30,25 +35,12 @@ $result = curl_exec($ch);
 //close connection
 curl_close($ch);
 
-//$userType = json_decode($userType, true);
-if ($userType === "Student")
-{	
-	
-	header("Location: sview.php");
-	
- 
-}
-
-elseif ($userType === "Professor")
-{
-  header("Location: pfview.html");
-}
-else
-{
-  header("Location: index.php");
-  
-}
+echo "Your exam has been submitted. Please wait for your instructor to post your grade";
 
 
- ?>
- 
+
+
+
+
+
+?>

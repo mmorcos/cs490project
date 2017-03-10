@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title> Add Exam Questions</title>
+    <title>Narrow Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../CSS/BootstrapCSS/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Create Question</a></li>
-            <li role="presentation"><a href="create_exam.php">Create Exam</a></li>
+            <li role="presentation"><a href="#">Create Exam</a></li>
             <li role="presentation"><a href="#">Grade Exam</a></li>
           </ul>
         </nav>
@@ -49,17 +49,18 @@
       <div class="jumbotron">
         <h1>Fill out the form!</h1>
           
-        <form id="question" class="form-signin" method="post" action="sendform.php">
+        <form id="questionform" class="form-signin" method="post" action="placeholder.php">
 		<h1 class="form-signin-heading text-muted"></h1>
-        <select class="form-control" name="category" id="category">
+        <select class="form-control">
             <option value="Category">Category</option>
-            <option value="Loops">Loops</option>
-            <option value="Arrays">Arrays</option>
-            <option value="If Statements">If Statements</option>
-            <option value="Other">Other</option>
+            <option value="for">for</option>
+            <option value="while">while</option>
+            <option value="syntax">syntax</option>
+            <option value="if">if</option>
+            <option value="other">Other</option>
         </select>
         <br >
-        <select class="form-control" name="difficulty" id="difficulty">
+        <select class="form-control">
             <option value="Difficulty">Difficulty</option>
             <option value="Easy">Easy</option>
           <!--  <option value="Easy">Medium</option>
@@ -67,19 +68,24 @@
             <option value="James_Gosling_Hard">James Gosling Hard</option> -->
         </select>
         <br >
-      <input type="text" name="methodName" id="methodName" class="form-control" placeholder="Method Name" required="" autofocus="">
+      <input type="text" class="form-control" placeholder="Method Name" required="" autofocus="">
         <br >
-      <input type="text" name="parameters" id="parameters" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
+      <input type="text" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
         <br >
-      <textarea placeholder="Questions are of the following form: Write a method name A that takes N amount of parameters that perform this function and returns/prints Z" rows="4" class="form-control" cols="50" name="question" id="question" form="question"></textarea>
-            <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
+      <textarea rows="4" class="form-control" cols="50" name="Question" form="questionform">Type the question in the form "Write a method named X that takes parameters of this type (int foo, String bar) that does Z."</textarea>
 
-        <!-- <p><a class="btn btn-lg btn-success" type="submit" role="button">Submit</a></p> -->
+        <p><a class="btn btn-lg btn-success" href="placeholder.html" role="button">Submit</a></p>
 
           </form>
-      </div>
-        
+          
 
+      </div>
+
+    
+
+      <footer class="footer">
+        <p>&copy; 2017 MSA, Inc.</p>
+      </footer>
 
     </div> <!-- /container -->
 

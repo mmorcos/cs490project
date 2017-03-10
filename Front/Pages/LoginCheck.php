@@ -1,43 +1,43 @@
-
 <?php
-    
+ //session_start();  
     include 'Connect.php';
+     
+     
 
-    $request = file_get_contents('php://input');
-    $recieve = json_decode($request);
-    
-    //$User = $recieve->username;
-    $Pass = $recieve->Password;
-    $Check = $recieve->Check;
-
-     echo "hello motherfucking world";
-    $string = json_decode(file_get_contents("php://input"), true);
-    $username = $string["username"];
-    $password = md5($string["password"]);
-         
-
-    echo var_dump($password);
-            $sql_queryStudent = mysqli_query($connection, "SELECT * FROM Students WHERE username = '$username'");
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            
+   
+            $sql_queryStudent = mysqli_query($connection, "SELECT username, password FROM Students WHERE username = '$username' AND password = '$password' "); 
             $returnCount = mysqli_num_rows($sql_queryStudent);
             
                  
-            $sql_queryProf = mysqli_query($connection, "SELECT * FROM Instructor WHERE username = '$username'");
+            $sql_queryProf = mysqli_query($connection, "SELECT username, password FROM Instructor WHERE username = '$username' AND password = '$password' ");
             $returnCount2 = mysqli_num_rows($sql_queryProf);
             
                 if($returnCount > 0 ) {
-                    echo "<br/>\n", 'Login successful. Welcome Student.';
-                    echo $username; 
-                    //echo $password;
+                    //echo "<br/>\n", 'Student';
+                   //echo "Student";
+                 $userType = "Student";
+                 echo json_encode($userType);
+                   
                 }                           
                 
                 elseif($returnCount2 > 0 ) {
-                    echo "<br/>\n", 'Login successful. Welcome Professor.';
+                    //echo "<br/>\n", 'Professor';
+                    // echo "Professor";
+                     $userType = "Professor";
+                 echo json_encode($userType);
+                     
+                                       
                 }
                 
                 else {      
                     
-                    echo "<br/>\n", 'Invalid login credentials';
+                    echo "<br/>\n", 'Invalid Login';
                  }
+           
+                 
         
                         mysqli_close($connection);
 ?>

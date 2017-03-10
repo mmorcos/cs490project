@@ -1,11 +1,21 @@
 <?php 
 
 
+$qvalue = $_POST['q'];
+
+	foreach ($qvalue as $question => $value) {
+	$count++;
+  }
+
+
+/*
 foreach($_POST['q'] as $key => $item){
+	echo $item; 
   print "<tr><td>" . $key . "</td><td>" . $item['q'] . "</td><td>" . $item['q'] . "</td></tr>";
 
 }
-		 $url = 'https://web.njit.edu/~st456/retrieve.php';
+		*/
+		  $url = 'https://web.njit.edu/~st456/retrieve.php';
           //open connection
           $ch = curl_init();
 

@@ -38,8 +38,8 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Create Question</a></li>
-            <li role="presentation"><a href="#">Create Exam</a></li>
+            <li role="presentation"><a href="questionform.html">Create Question</a></li>
+            <li role="presentation" class="active"><a href="create_exam.php">Create Exam</a></li>
             <li role="presentation"><a href="#">Grade Exam</a></li>
           </ul>
         </nav>
@@ -49,7 +49,7 @@
       <div class="jumbotron">
         <h3>Select your exam questions</h3>
           
-              <form action="student_exam.php" method="POST">
+              <form action="success.php" method="POST">
               <?php 
             include_once 'recieve_exam.php';
             ?>
