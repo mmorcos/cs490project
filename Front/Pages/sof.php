@@ -36,13 +36,6 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 
-include_once 'https://web.njit.edu/~ac482/CS490/Connect.php';
-include_once 'https://web.njit.edu/~ac482/CS490/LoginCheck.php';
-
-$retrieve = file_get_contents("php://input");
-var_dump($retrieve);
-var_dump($userType);
-
 //$tmp = $result; 
 //if ($tmp == 'Invalid Login1')
 
@@ -83,17 +76,35 @@ elseif ($result == 'Professor')
 else {
 echo "failure";
 }
+ */
+
+
 
 if ($result == 'Student')
 {	
-	echo '<script> window.location.replace("https://web.njit.edu/~mm723/Front/Pages/sview.php");</script>';
+	$stud = "stud";
+	if ($stud == "stud")
+	{
+		header("Location: sview.php");
+	}
+	//echo "scucess"; 
+	//echo "student login";
+	//echo '<script> window.location.replace("https://web.njit.edu/~mm723/Front/Pages/sview.php");</script>';
 	//header("Location: sview.php");
 	//echo '<script>setTimeout(function(){window.location.href="sview.php"},1000)</script>';
 }
- else if ($result == 'Professor')
+if  ($result == 'Professor')
 {
-	echo '<script> window.location.replace("https://web.njit.edu/~mm723/Front/Pages/pfview.html");</script>';
+	$stud = "prof";
+	if ($stud == "prof")
+	{
+		header("Location: pfview.html");
+	}
+
+	//echo "professor login";
+	//echo '<script> window.location.replace("https://web.njit.edu/~mm723/Front/Pages/pfview.html");</script>';
 	//header('Location: pfview.html');
 	//echo '<script>setTimeout(function(){window.location.href="pfview.html"},1000)</script>';
-} */
+}
+
  ?>

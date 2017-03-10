@@ -20,12 +20,10 @@
 
           for ($i=0; $i<$numOfQuests; $i++) 
           {
-          	echo "<input type='checkbox' name='q[]' id='q[]' value='";
-               echo "for loop is working";
-          	echo $exquest['question$i'];
-               echo "'> ";
-               echo $exquest["question$i"]; 
-			echo "<br /><br />";          	
+               //$counter++; 
+          	//echo "<input type='checkbox' name='q[]' id='q[]' value='";
+               echo "<input type='checkbox' name='q[]' id='q[]' value='" . $exquest['question$i'] . "'> " . $exquest["question$i"] . "<br /><br />";
+          		
           }         
 
 
