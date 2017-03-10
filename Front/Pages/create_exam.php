@@ -50,14 +50,9 @@
         <h3>Select your exam questions</h3>
           
               <form action="student_exam.php" method="POST">
-              
-              
               <?php 
             include_once 'recieve_exam.php';
-            
             ?>
-            
-
       <br />
 
       <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>

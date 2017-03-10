@@ -5,45 +5,6 @@ foreach($_POST['q'] as $key => $item){
   print "<tr><td>" . $key . "</td><td>" . $item['q'] . "</td><td>" . $item['q'] . "</td></tr>";
 
 }
-/*
-$capture = array();
-$count = 0;
-foreach ($_POST['q'] as $key => $value) {
-  $capture["$key"] = $value;
-  $count++;
-  echo $count; 
-  //echo $capture["key"]; 
-}
-*/
-/*
-$array = array(); 
-if (isset($_POST['q']) )
-{
-	$index = $_POST['q']; 
-	if (is_array($index))
-	{
-		foreach ($index as $q =>$value) 
-		{
-			//$array [] = $q['q']; 
-			echo $q; 
-
-			//echo $q . "<br />";
-			//var_dump($value);
-			if ($q >= 0)
-			{
-				echo "there are checkmarks";
-
-			}
-			else
-			{
-				echo "there are no checkmarks";
-			}
-		}
-	}
-}
-*/
-
-/*
 		 $url = 'https://web.njit.edu/~st456/retrieve.php';
           //open connection
           $ch = curl_init();
@@ -73,7 +34,7 @@ if (isset($_POST['q']) )
 
 }
 
-*/
+
 
 
 
