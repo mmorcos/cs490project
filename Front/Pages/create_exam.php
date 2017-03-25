@@ -49,7 +49,7 @@
       <div class="jumbotron">
         <h3>Select your exam questions</h3>
           
-              <form action="success.php" method="POST">
+              <form action="send_exam.php" method="POST">
               <?php 
             include_once 'recieve_exam.php';
             ?>

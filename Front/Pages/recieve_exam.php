@@ -17,12 +17,19 @@
           $exquest = json_decode($exquest, true); 
           
           $numOfQuests = $exquest["questcount"]; 
+               
+
+
+          echo "<input type='text' name='examID' id='examID' class='form-control' placeholder='Enter an exam ID' autofocus=''>" . "<br />"; 
+
 
           for ($i=0; $i<$numOfQuests; $i++) 
           {
-               //$counter++; 
+               $counter++; 
           	//echo "<input type='checkbox' name='q[]' id='q[]' value='";
-               echo "<input type='checkbox' name='q[]' id='q[]' value='" . $exquest['question$i'] . "'> " . $exquest["question$i"] . "<br /><br />";
+
+
+               echo "<input type='checkbox' name='q[$i]' id='q[$i]' value='" . $exquest["question$i"] . "'> " . $exquest["question$i"] . "<br /><br />";
           		
           }         
 

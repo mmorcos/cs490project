@@ -46,11 +46,13 @@
         <h3 class="text-muted">Exam System</h3>
       </div>
 
-      <div class="jumbotron">
-        <h1>Fill out the form!</h1>
-          
+      <div class="jumbotron">       
         <form id="question" class="form-signin" method="post" action="sendform.php">
-		<h1 class="form-signin-heading text-muted"></h1>
+    <h1 class="form-signin-heading text-muted"></h1>
+      <input type="text" name="methodName" id="methodName" class="form-control" placeholder="Method Name" required="" autofocus="">
+      <br >
+      <input type="text" name="pointValue" id="pointValue" class="form-control" placeholder="How many points is this question worth?" require="" autofocus="">
+      <br >
         <select class="form-control" name="category" id="category">
             <option value="Category">Category</option>
             <option value="Loops">Loops</option>
@@ -62,17 +64,37 @@
         <select class="form-control" name="difficulty" id="difficulty">
             <option value="Difficulty">Difficulty</option>
             <option value="Easy">Easy</option>
-          <!--  <option value="Easy">Medium</option>
+            <option value="Easy">Medium</option>
             <option value="Hard">Hard</option>
-            <option value="James_Gosling_Hard">James Gosling Hard</option> -->
         </select>
         <br >
-      <input type="text" name="methodName" id="methodName" class="form-control" placeholder="Method Name" required="" autofocus="">
+      <input type="text" name="parameter1" id="parameter1" class="form-control" placeholder="1st Parameter" autofocus="">
         <br >
-      <input type="text" name="parameters" id="parameters" class="form-control" placeholder="Comma Separated Parameters" required="" autofocus="">
+      <input type="text" name="parameter2" id="parameter2" class="form-control" placeholder="2nd Parameter" autofocus="">
+        <br >
+      <input type="text" name="parameter3" id="parameter3" class="form-control" placeholder="3rd Parameter" autofocus="">
         <br >
       <textarea placeholder="Questions are of the following form: Write a method name A that takes N amount of parameters that perform this function and returns/prints Z" rows="4" class="form-control" cols="50" name="question" id="question" form="question"></textarea>
-            <button class="btn btn-lg btn-success" type="submit" role="button"> Submit</button>
+      <br >
+      <input type="text" name="sampleinput" id="sampleinput" class="form-control" placeholder="Sample Input" autofocus="">
+        <br >
+      <input type="text" name="sampleoutput" id="sampleinput" class="form-control" placeholder="Sample Output" autofocus="">
+        <br >
+        
+        <!-- new line -->
+       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>
+
+ 
+   <!-- new method added-->     
+<script type="text/javascript">
+function Confirm(form){
+alert("New question added to the bank!"); 
+form.submit();
+document.getElementById("question").reset();
+}
+</script>
+
+
 
         <!-- <p><a class="btn btn-lg btn-success" type="submit" role="button">Submit</a></p> -->
 

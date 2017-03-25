@@ -1,13 +1,20 @@
   <?php   
     $url = "https://web.njit.edu/~ac482/CS490/questionstore.php";
     $fields = array(
-	  'question' => $_POST['question'],
-	  'parameters' => $_POST['parameters'],
-    'methodName' => $_POST['methodName'],
-	  'difficulty' => $_POST['difficulty'],
-    'category' => $_POST['category']
-    );
 
+	  'methodName' => $_POST['methodName'],
+	  'pointValue' => $_POST['pointValue'],
+	  'category' => $_POST['category'],
+	  'difficulty' => $_POST['difficulty'],
+	  'question' => $_POST['question'],
+	  'parameter1' => $_POST['parameter1'],
+	  'parameter2' => $_POST['parameter2'],
+	  'parameter3' => $_POST['parameter3'],
+	  'sampleinput' => $_POST['sampleinput'],
+	  'sampleoutput' => $_POST['sampleoutput'],
+
+    );
+    
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
 
@@ -25,4 +32,8 @@ curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 $result = curl_exec($ch);
 curl_close($ch);
 
+//new line added
+echo "<script>setTimeout(\"location.href = 'questionform.html';\",1);</script>";
+
  ?>
+ 
