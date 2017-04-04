@@ -49,23 +49,21 @@
       <div class="jumbotron">
         <h3>Select your exam questions</h3>
           
-              <form action="send_exam.php" method="POST">
               <?php 
-            include_once 'recieve_exam.php';
+            include_once 'rapne_questions.php';
             ?>
       <br />
 
-<button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>    </form>
+    
+    </form>
+
           </form>
       </div>
+        
+
+
     </div> <!-- /container -->
-<script type="text/javascript">
-function Confirm(form){
-alert("New question added to the bank!"); 
-form.submit();
-document.getElementById("question").reset();
-}
-</script>
+
 
 
   </body>

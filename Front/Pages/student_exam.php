@@ -46,7 +46,7 @@
               
               
               <?php 
-            include_once 'send_examBackup.php';
+            include_once 'generate_exam.php';
             
             ?>
             
