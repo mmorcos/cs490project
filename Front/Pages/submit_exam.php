@@ -1,49 +1,67 @@
 <?php 
-
-
-
-$counter = sizeof($_POST);
-$counter = $counter/2; 
-$value = $_POST['value']; 
-
-
+/*
 $i=0; 
 for($i=0; $i<$counter; $i++)
 {
-	$value[$i] = $_POST['value'];
-}
-$arr = get_defined_vars();
-print_r($arr);
-
-
-/*
-$value1 = $_POST['value1'];
-echo $value1; 
-
-
-$answers = $_POST['answers'];
-
-
-
-foreach($_POST as $life => $shit) {
-
-   $outValue = $life . "<br>";
-echo $outValue; 
+	//$value[$i] = $_POST['value'];
 }
 
+$floc = 'people.txt';
+$dfile = fopen($floc, 'r');
+$tarr = fread($dfile, filesize($floc));
+$tarr = json_decode($tarr, 1);
+fclose($dfile);
 
 
+$file = 'people.txt';
+// Open the file to get existing content
+$current = file_get_contents($file);
+// Append a new person to the file
+$current .= "John Smith\n";
+// Write the contents back to the file
+file_put_contents($file, $current);
 
 
-foreach ($_POST as $param_name => $param_val) {
-    //echo "Param: $param_name; Value: $param_val<br />\n";
-	//echo $param_name; 
-	echo $param_val;
+$myfile[] = fopen($file[$i], "w");      //This creates an array of files with index i and the "w" permmission 
+	fwrite($myfile, $value);		//this SHOULD write $value to $myfile
+	fclose($myfile);			
 
-}
 */
 
+
+
+$counter = sizeof($_POST['value']);
+$value = $_POST['value'];
+
+
+$i=0; 
+while($i<=sizeof($value)-1)
+{	
+
+	$file[$i] = 'answer' . $i . '.jar';       //This generates the file name
+	echo $file;								 //This  just echos the filename to be created
+
+	file_put_contents($file[$i], $value[$i]); //This saves the files with their corresponding answers
+
+	$i++; 
+
+}
+
+
+
+$arr = get_defined_vars();
+print_r($arr)
+
 /*
+for($i=0; $i<=$counter; $i++)
+{
+	$file = 'answer' .$i . '.txt';
+
+}
+
+$arr = get_defined_vars();
+print_r($arr)
+
  foreach ($value as $key => $answer) {
 echo ". [".$key."] = ".$answer."<br>";
  }
