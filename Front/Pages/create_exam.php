@@ -49,13 +49,37 @@
       <div class="jumbotron">
         <h3>Select your exam questions</h3>
           
+
+          <form action="refresh.php" method="POST"> 
+
+
+                    <select class='form-control' name='difficulty' id='difficulty'>
+                    <option value='Difficulty'>Difficulty</option>
+                    <option value='Easy'>Easy</option>
+                    <option value='Easy'>Medium</option>
+                    <option value='Hard'>Hard</option>
+               </select>
+               <br >
+               <button  name="Refresh" type="submit" role="button" onClick="window.location.reload()"> Refresh</button>
+               <br >
+               </form>
+
+
+      
+
+
+
+
               <form action="send_exam.php" method="POST">
+              <br >
               <?php 
             include_once 'recieve_exam.php';
             ?>
       <br />
 
-<button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>    </form>
+<button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>
+
+    </form>
           </form>
       </div>
     </div> <!-- /container -->

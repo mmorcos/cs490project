@@ -23,6 +23,7 @@
           echo "<input type='text' name='examID' id='examID' class='form-control' placeholder='Enter an exam ID' autofocus=''>" . "<br />"; 
 
 
+
           for ($i=0; $i<$numOfQuests; $i++) 
           {
                $counter++; 

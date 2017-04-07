@@ -2,6 +2,7 @@
 
 $examID = $_POST['examID'];
 $qvalue = $_POST['q']; 
+$difficulty = $_POST['difficulty'];
 $count = 0; 
 
 /*
@@ -23,6 +24,7 @@ $count = 0;
           'examID' => $examID,
           'newValue' => $ques,
           'count' => $count, 
+          'difficulty' => $difficulty,
           );
 
           
