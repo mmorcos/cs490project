@@ -21,7 +21,7 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation"><a href="student_exam.php">Take Exam </a></li>
-            <li role="presentation"><a href="view_grade.php">View Grade</a></li>
+            <li role="presentation"><a href="#">View Grade</a></li>
             <li role="presentation"><a href="logout.php" role="button">Logout </a> </li>
 
           </ul>
@@ -30,10 +30,12 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Welcome!</h1>
-        <p class="lead">Choose from the following </p>
-        <p><a class="btn btn-lg btn-success" href="student_exam.php" role="button">Take Exam </a></p>
-        <p><a class="btn btn-lg btn-success" href="view_grade.php" role="button">View Grade </a></p>
+        <?php 
+        $grade=0;
+        echo "You scored a: "; 
+        echo $grade; 
+
+        ?>
 
 
       </div>
