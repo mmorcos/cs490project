@@ -34,13 +34,42 @@
     <![endif]-->
   </head>
   <body>
+
+  <script type="text/javascript">
+  function show(){
+     if (document.getElementById('numParams').value=='1') 
+     {
+                  document.getElementById('parameter1').style.display='block';
+
+      }
+      if (document.getElementById('numParams').value=='2')
+      {
+                  document.getElementById('parameter1').style.display='block';
+                  document.getElementById('parameter2').style.display='block';
+      }
+      if (document.getElementById('numParams').value=='3')
+      {
+                  document.getElementById('parameter1').style.display='block';
+                  document.getElementById('parameter2').style.display='block';
+                  document.getElementById('parameter3').style.display='block';
+      }
+      else if (document.getElementById('numParams').value=='4')
+      {
+                  document.getElementById('parameter1').style.display='block';
+                  document.getElementById('parameter2').style.display='block';
+                  document.getElementById('parameter3').style.display='block';
+                  document.getElementById('parameter4').style.display='block';
+      }
+
+              }
+  </script>
     <div class="container">
       <div class="header clearfix">
-        <nav>
+        <nav> 
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Create Question</a></li>
             <li role="presentation"><a href="create_exam.php">Create Exam</a></li>
-            <li role="presentation"><a href="#">Grade Exam</a></li>
+            <li role="presentation"><a href="release_grade.php">Grade Exam</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">Exam System</h3>
@@ -64,16 +93,40 @@
         <select class="form-control" name="difficulty" id="difficulty">
             <option value="Difficulty">Difficulty</option>
             <option value="Easy">Easy</option>
-            <option value="Easy">Medium</option>
+            <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
         </select>
         <br >
-      <input type="text" name="parameter1" id="parameter1" class="form-control" placeholder="1st Parameter" autofocus="">
-        <br >
-      <input type="text" name="parameter2" id="parameter2" class="form-control" placeholder="2nd Parameter" autofocus="">
-        <br >
-      <input type="text" name="parameter3" id="parameter3" class="form-control" placeholder="3rd Parameter" autofocus="">
-        <br >
+          <select class="form-control" name="numParams" id="numParams" onchange="javascript:show()">
+            <option value="null">Number of parameters</option>
+             <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+           </select>
+           <br >
+        <!-- hiding parameters until selected -->
+
+        <div id="divParams">
+        <form id="formParams" name="formParams" action="request.php" method="post">
+      <div id="parameter1" style="display:none"> <input type="text" name="parameter1" id="parameter1" class="form-control" placeholder="1st Parameter" autofocus=""> 
+        <br ></div>
+     <div id="parameter2" style="display:none"> <input type="text" name="parameter2" id="parameter2" class="form-control" placeholder="2nd Parameter" autofocus="">
+        <br ></div>
+      <div id="parameter3" style="display:none" > <input type="text" name="parameter3" id="parameter3" class="form-control" placeholder="3rd Parameter" autofocus="">
+        <br ></div>
+      <div id="parameter4" style="display:none"> <input type="text" name="parameter4" id="parameter4" class="form-control" placeholder="4th Parameter" autofocus="">
+      <br ></div>
+
+        </form>
+        </div>
+
+
+
+
+
+
       <textarea placeholder="Questions are of the following form: Write a method name A that takes N amount of parameters that perform this function and returns/prints Z" rows="4" class="form-control" cols="50" name="question" id="question" form="question"></textarea>
       <br >
       <input type="text" name="sampleinput" id="sampleinput" class="form-control" placeholder="Sample Input" autofocus="">

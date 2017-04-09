@@ -1,6 +1,6 @@
 <?php
 
-$url = "https://web.njit.edu/~st456/index.php";
+$url = "https://web.njit.edu/~st456/grade_release.php";
 $fields = array(
 	'username' => $_POST['username'],
 );

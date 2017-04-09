@@ -98,10 +98,18 @@
 		<h1 class="form-signin-heading text-muted">Sign In</h1>
 		<input type="text" id="username" name="username" class="form-control" placeholder="username" required="" autofocus="">
 		<input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+
 		<button class="btn btn-lg btn-primary btn-block" type="submit">
 			Sign In
 		</button>
 	</form>
+
+  <p> Mina Morcos - Front </p>
+    <br >
+    <p> Shaquille Tucker - Middle </p>
+    <br >
+    <p> Austin Christian - Back </p>
+    <br >
 
 </div>
 </body>

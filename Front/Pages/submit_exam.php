@@ -18,7 +18,7 @@ while($i<=sizeof($value)-1)
 	$i++; 
 }
 
-$url = "https://web.njit.edu/~st456/index.php";
+$url = "https://web.njit.edu/~st456/grade2.php";
 
 
 foreach ($value as $key => $answer) {
