@@ -37,6 +37,43 @@
   <body>
 
   <script type="text/javascript">
+
+
+  function showCases()
+  {
+      if (document.getElementById('numCases').value=='1') 
+     {
+                  document.getElementById('case1').style.display='block';
+                  document.getElementById('case2').style.display='none';
+                  document.getElementById('case3').style.display='none';
+                  document.getElementById('case4').style.display='none';
+      }
+      if (document.getElementById('numCases').value=='2')
+      {
+                  document.getElementById('case1').style.display='block';
+                  document.getElementById('case2').style.display='block';
+                  document.getElementById('case3').style.display='none';
+                  document.getElementById('case4').style.display='none';
+      }
+      if (document.getElementById('numCases').value=='3')
+      {
+                  document.getElementById('case1').style.display='block';
+                  document.getElementById('case1').style.display='block';
+                  document.getElementById('case3').style.display='block';
+                  document.getElementById('case4').style.display='none';
+
+      }
+      else if (document.getElementById('numCases').value=='4')
+      {
+                  document.getElementById('case1').style.display='block';
+                  document.getElementById('case2').style.display='block';
+                  document.getElementById('case3').style.display='block';
+                  document.getElementById('case4').style.display='block';
+      }
+    }
+  
+
+
   function show(){
      if (document.getElementById('numParams').value=='1') 
      {
@@ -116,7 +153,6 @@
         <!-- hiding parameters until selected -->
 
         <div id="divParams">
-        <form id="formParams" name="formParams" action="request.php" method="post">
       <div id="parameter1" style="display:none"> <input type="text" name="parameter1" id="parameter1" class="form-control" placeholder="1st Parameter" autofocus=""> 
         <br ></div>
      <div id="parameter2" style="display:none"> <input type="text" name="parameter2" id="parameter2" class="form-control" placeholder="2nd Parameter" autofocus="">
@@ -126,7 +162,6 @@
       <div id="parameter4" style="display:none"> <input type="text" name="parameter4" id="parameter4" class="form-control" placeholder="4th Parameter" autofocus="">
       <br ></div>
 
-        </form>
         </div>
 
 
@@ -136,11 +171,31 @@
 
       <textarea placeholder="Questions are of the following form: Write a method name A that takes N amount of parameters that perform this function and returns/prints Z" rows="4" class="form-control" cols="50" name="question" id="question" form="question"></textarea>
       <br >
-      <input type="text" name="sampleinput" id="sampleinput" class="form-control" placeholder="Sample Input" autofocus="">
-        <br >
-      <input type="text" name="sampleoutput" id="sampleinput" class="form-control" placeholder="Sample Output" autofocus="">
-        <br >
-        
+
+
+      <select class="form-control" name="numCases" id="numCases" onchange="javascript:showCases()">
+            <option value="null">Number of Cases</option>
+             <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+           </select>
+           <br >
+
+<!-- hidden until selected -->
+
+        <div id="divCases">
+      <div id="case1" style="display:none"> <input type="text" name="case1" id="case1" class="form-control" placeholder="Case 1" autofocus=""> 
+        <br ></div>
+     <div id="case2" style="display:none"> <input type="text" name="case2" id="case2" class="form-control" placeholder="Case 2" autofocus="">
+        <br ></div>
+      <div id="case3" style="display:none" > <input type="text" name="case3" id="case3" class="form-control" placeholder="Case 3" autofocus="">
+        <br ></div>
+      <div id="case4" style="display:none"> <input type="text" name="case4" id="case4" class="form-control" placeholder="Case 4" autofocus="">
+      <br ></div>
+
+        </div>
         <!-- new line -->
        <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>
 
