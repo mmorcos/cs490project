@@ -15,7 +15,10 @@
 	  'case2' => $_POST['case2'],
 	  'case3' => $_POST['case3'],
 	  'case4' => $_POST['case4'],
-
+	  'answer1' => $_POST['answer1'],
+  	  'answer2' => $_POST['answer2'],
+	  'answer3' => $_POST['answer3'],
+	  'answer4' => $_POST['answer4'],
     );
     
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }

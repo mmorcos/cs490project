@@ -43,10 +43,19 @@
   {
       if (document.getElementById('numCases').value=='1') 
      {
+                  //show the corerspoinding case field
                   document.getElementById('case1').style.display='block';
                   document.getElementById('case2').style.display='none';
                   document.getElementById('case3').style.display='none';
                   document.getElementById('case4').style.display='none';
+
+                  //show the corresponding sampleAnswer field
+                  document.getElementById('answer1').style.display='block';
+                  document.getElementById('answer2').style.display='none';
+                  document.getElementById('answer3').style.display='none';
+                  document.getElementById('answer4').style.display='none';
+                  
+
       }
       if (document.getElementById('numCases').value=='2')
       {
@@ -54,6 +63,12 @@
                   document.getElementById('case2').style.display='block';
                   document.getElementById('case3').style.display='none';
                   document.getElementById('case4').style.display='none';
+
+                  //show the corresponding sampleAnswer fields
+                  document.getElementById('answer1').style.display='block';
+                  document.getElementById('answer2').style.display='block';
+                  document.getElementById('answer3').style.display='none';
+                  document.getElementById('answer4').style.display='none';
       }
       if (document.getElementById('numCases').value=='3')
       {
@@ -62,6 +77,14 @@
                   document.getElementById('case3').style.display='block';
                   document.getElementById('case4').style.display='none';
 
+                  //sample answers
+                  document.getElementById('answer1').style.display='block';
+                  document.getElementById('answer2').style.display='block';
+                  document.getElementById('answer3').style.display='block';
+                  document.getElementById('answer4').style.display='none';
+
+
+
       }
       else if (document.getElementById('numCases').value=='4')
       {
@@ -69,6 +92,13 @@
                   document.getElementById('case2').style.display='block';
                   document.getElementById('case3').style.display='block';
                   document.getElementById('case4').style.display='block';
+
+                 //sample answers
+                  document.getElementById('answer1').style.display='block';
+                  document.getElementById('answer2').style.display='block';
+                  document.getElementById('answer3').style.display='block';
+                  document.getElementById('answer4').style.display='block';
+
       }
     }
   
@@ -187,13 +217,44 @@
 
         <div id="divCases">
       <div id="case1" style="display:none"> <input type="text" name="case1" id="case1" class="form-control" placeholder="Case 1" autofocus=""> 
-        <br ></div>
+        <br >
+        </div>
+
+         <div id="answer1" style="display:none"> <textarea placeholder="Enter a sample answer for the test case above. " rows="4" class="form-control" cols="50" name="answer1" id="answer1"></textarea>
+        <br >
+        </div>
+
+
+
+
+
      <div id="case2" style="display:none"> <input type="text" name="case2" id="case2" class="form-control" placeholder="Case 2" autofocus="">
-        <br ></div>
+        <br >
+        </div>
+
+         <div id="answer2" style="display:none"> <textarea placeholder="Enter a sample answer for the test case above. " rows="4" class="form-control" cols="50" name="answer2" id="answer2"></textarea>
+        <br >
+        </div>    
+
+
+
       <div id="case3" style="display:none" > <input type="text" name="case3" id="case3" class="form-control" placeholder="Case 3" autofocus="">
-        <br ></div>
+        <br >
+        </div>
+
+        <div id="answer3" style="display:none"> <textarea placeholder="Enter a sample answer for the test case above. " rows="4" class="form-control" cols="50" name="answer3" id="answer3"></textarea>
+        <br >
+        </div>    
+
       <div id="case4" style="display:none"> <input type="text" name="case4" id="case4" class="form-control" placeholder="Case 4" autofocus="">
-      <br ></div>
+      <br >
+      </div>
+
+        <div id="answer4" style="display:none"> <textarea placeholder="Enter a sample answer for the test case above. " rows="4" class="form-control" cols="50" name="answer4" id="answer4"></textarea>
+        <br >
+        </div>    
+
+
 
         </div>
         <!-- new line -->

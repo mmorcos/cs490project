@@ -54,6 +54,8 @@
         <h3 class="text-muted">Exam System</h3>
       </div>
 
+
+      
       <div class="jumbotron">
         <h3>Select your exam questions</h3>
           
@@ -61,6 +63,8 @@
               <?php 
             include_once 'recieve_exam.php';
             ?>
+
+
       <br />
 
 <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>
