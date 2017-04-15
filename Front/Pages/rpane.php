@@ -34,24 +34,11 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="questionform.html">Create Question</a></li>
-            <li role="presentation" class="active"><a href="create_exam.php">Create Exam</a></li>
-            <li role="presentation"><a href="#">Grade Exam</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Exam System</h3>
-      </div>
+   
 
       <div class="jumbotron">
-        <h3>Select your exam questions</h3>
           
-              <?php 
-            include_once 'rapne_questions.php';
-            ?>
+
       <br />
 
     

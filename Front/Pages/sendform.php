@@ -10,7 +10,7 @@
 	  'parameter1' => $_POST['parameter1'],
 	  'parameter2' => $_POST['parameter2'],
 	  'parameter3' => $_POST['parameter3'],
-	  'parameter4' => $_POST['parameter4'].
+	  'parameter4' => $_POST['parameter4'],
 	  'case1' => $_POST['case1'],
 	  'case2' => $_POST['case2'],
 	  'case3' => $_POST['case3'],

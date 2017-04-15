@@ -1,9 +1,28 @@
 <?php 
 
 $examID = $_POST['examID'];
-$qvalue = $_POST['q']; 
-$difficulty = $_POST['difficulty'];
+$questionValue = $_POST['questionValue']; 
+$difficultyValue = $_POST['difficultyValue'];
+$pointsValue = $_POST['pointsValue'];
+$categoryValue = $_POST['categoryValue'];
 $count = 0; 
+
+
+ foreach ($question as $questionKey => $questionValue){
+                    //$question is pulled out 
+               }
+
+               foreach ($points as $pointsKey => $pointsValue){
+                   //$points is pulled out 
+               }
+
+               foreach ($category as $categoryKey => $categoryValue){
+                    //$category is pulled out
+               }
+
+               foreach ($difficulty as $difficultyKey => $difficultyValue){
+                    //$difficulty is pulled out
+               }
 
 /*
 	foreach ($qvalue as $question => $value) {	
