@@ -42,21 +42,6 @@
     <![endif]-->
   </head>
   <body>
-  <script type="text/javascript">
-    function preview()
-    {
-      if (document.getElementById('Bike').checked) {
-      
-        var x = document.getElementById("Bike").value;
-            alert(x); 
-    }
-      if (document.getElementById('Car').checked){
-            var y = document.getElementById("Car").value;
-            alert(y);
-          }
-  }
-
-  </script>
     <div class="container">
       <div class="header clearfix">
         <nav>
@@ -87,7 +72,7 @@
             include_once 'recieve_exam.php';
             ?>
 
-                <input type="text" name="examID" id="examID" class="form-control" placeholder="Enter an exam ID" autofocus="">
+                <input type="text" name="examID" id="examID" class="form-control" placeholder="Enter an exam ID to save this exam" autofocus="">
       <br />
 
       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>

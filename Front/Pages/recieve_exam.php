@@ -69,7 +69,7 @@
 
                $counter++; 
 
-               echo "<tr><td>" . "<input type='checkbox' name='q[$i]' id='q[$i]' value='" . "<td>" . $pointsValue . "</td>" . "'> " . "<td>" .$questionValue. "</td>" . "<td>" . $pointsValue . "</td>" . "<td>" . $categoryValue . "</td>" . "<td>" . $difficultyValue . "</td>" . "</td></tr>";
+               echo "<tr><td>" . "<input type='checkbox' name='q[$i]' id='q[$i]' value='" . $questionValue ."'> " . "<td>" .$questionValue. "</td>" . "<td>" . $pointsValue . "</td>" . "<td>" . $categoryValue . "</td>" . "<td>" . $difficultyValue . "</td>" . "</td></tr>";
                          
                     
           }   
