@@ -46,14 +46,7 @@
     <!-- Custom styles for this template -->
     <link href="../CSS/jumbotron-narrow.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 <html lang="en">
 <body>
@@ -65,18 +58,10 @@
     <div class="container">
       <div class="header clearfix">
   
-        <h3 class="text-muted">Exam System</h3>
+        <h3 class="text-muted">Select Questions</h3>
       </div>
       <div class="jumbotron">
 
-     <!-- <table width=100% height=100%>
-     <td width=50%   style="border-right: solid 1px #f00;">
-        <h3>Select your exam questions</h3>
-
-           <form action="" onclick="javascript:preview()">
-            <input type="checkbox" id="Bike" name="vehicle" value="Bike">I have a bike<br>
-            <input type="checkbox" id="Car" name="vehicle" value="Car">I have a car 
-          </form>-->
 
 
 <script type="text/javascript">
@@ -87,14 +72,17 @@
 
 </script>
 
-              <form action="send_exam.php" method="POST">
+              <form action="send_examTest.php" method="POST">
               <?php 
             include_once 'recieve_exam.php';
             ?>
 
                 <input type="text" name="examID" id="examID" class="form-control" placeholder="Enter an exam ID to save this exam" autofocus="">
       <br />
-      <input type="button" value="Click" id="btntest" />
+      <input type="button" value="Update Preview" id="btntest" />
+      <br />
+      <br />
+      <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button>
 
 <!--
       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)"> Submit</button> -->
@@ -108,14 +96,20 @@
 // Returns an array with values of the selected (checked) checkboxes in "frm"
 function getSelectedChbox(frm) {
   var selchbox = [];        // array that will store the value of selected checkboxes
-
   // gets all the input tags in frm, and their number
   var inpfields = frm.getElementsByTagName('input');
   var nr_inpfields = inpfields.length;
+  var z=1; 
 
   // traverse the inpfields elements, and adds the value of selected (checked) checkbox in selchbox
   for(var i=0; i<nr_inpfields; i++) {
-    if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true) selchbox.push(inpfields[i].value);
+    if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true){ 
+      selchbox.push(z + ")");
+      selchbox.push(inpfields[i].value);
+      selchbox.push("<br />");
+      selchbox.push("<br />");
+      z++; 
+    }
   }
 
   return selchbox;
@@ -124,13 +118,13 @@ function getSelectedChbox(frm) {
   /* Test this function */
 // When click on #btntest, alert the selected values
 document.getElementById('btntest').onclick = function(){
-  var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
+  var selchb = getSelectedChbox(this.form) + "<br />";     // gets the array returned by getSelectedChbox()
  // var x = document.getElementsByTagName("input");
  for (var i=0; i<selchb.length; i++){
-  document.getElementById("demo").innerHTML = selchb + "\n"; //this should put everything checked into the preview window
+  document.getElementById("demo").innerHTML = selchb; //this should put everything checked into the preview window
+  }
 
-console.log(selchb.length);
-}
+//console.log(selchb.join('\r\n'));
 }
 //-->
 </script>
@@ -170,7 +164,7 @@ document.getElementById("question").reset();
     <div class="container">
       <div class="header clearfix">
   
-        <h3 class="text-muted">Exam System</h3>
+        <h3 class="text-muted">Exam Preview</h3>
       </div>
       <div class="jumbotron">
 
@@ -192,10 +186,6 @@ document.getElementById("question").reset();
 
 </script>
 
-              <form action="send_exam.php" method="POST">
-              <?php 
-            //include_once 'recieve_exam.php';
-            ?>
 
             <p id="demo">
 

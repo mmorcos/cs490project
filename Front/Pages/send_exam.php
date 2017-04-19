@@ -3,18 +3,21 @@
 $examID = $_POST['examID'];
 $questionValue = $_POST['questionValue']; 
 $difficultyValue = $_POST['difficultyValue'];
+$newPoints = $_POST['newPoints'];
 $pointsValue = $_POST['pointsValue'];
 $categoryValue = $_POST['categoryValue'];
 $count = 0; 
 
 
- foreach ($question as $questionKey => $questionValue){
+              foreach ($question as $questionKey => $questionValue){
                     //$question is pulled out 
                }
 
                foreach ($points as $pointsKey => $pointsValue){
                    //$points is pulled out 
                }
+
+               foreach ($newPoints as $newPointsKey=> $newPointsValue)
 
                foreach ($category as $categoryKey => $categoryValue){
                     //$category is pulled out
