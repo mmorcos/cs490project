@@ -45,8 +45,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../CSS/jumbotron-narrow.css" rel="stylesheet">
-
-
   </head>
 <html lang="en">
 <body>
@@ -96,6 +94,7 @@
 // Returns an array with values of the selected (checked) checkboxes in "frm"
 function getSelectedChbox(frm) {
   var selchbox = [];        // array that will store the value of selected checkboxes
+  var pointvals = [];
   // gets all the input tags in frm, and their number
   var inpfields = frm.getElementsByTagName('input');
   var nr_inpfields = inpfields.length;
@@ -106,13 +105,22 @@ function getSelectedChbox(frm) {
     if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true){ 
       selchbox.push(z + ")");
       selchbox.push(inpfields[i].value);
+      selchbox.join(" ");
       selchbox.push("<br />");
       selchbox.push("<br />");
-      z++; 
+     // inpfields[i].type == 'text'
     }
+    if(inpfields[i].type == 'text')
+    {
+      //pointvals.push(inpfields[i].value);
+      //selchbox.push(inpfields[i].value);
+      //console.log(selchbox);
+    }
+    z++; 
   }
 
   return selchbox;
+  return pointvals; 
 }
 
   /* Test this function */
@@ -122,6 +130,7 @@ document.getElementById('btntest').onclick = function(){
  // var x = document.getElementsByTagName("input");
  for (var i=0; i<selchb.length; i++){
   document.getElementById("demo").innerHTML = selchb; //this should put everything checked into the preview window
+  scroll(0,0);
   }
 
 //console.log(selchb.join('\r\n'));

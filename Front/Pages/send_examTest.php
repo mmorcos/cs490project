@@ -1,26 +1,35 @@
 <?php
 $examID = $_POST['examID'];
 $qvalue = $_POST['q']; 
-$count = 0; 
+$newPoints = $_POST['newPoints'];
+$answerOneValue = $_POST['answerOneValue'];
+$answerTwoValue = $_POST['answerTwoValue'];
+$answerThreeValue = $_POST['answerThreeValue'];
+$answerFourValue = $_POST['answerFourValue'];
+$caseOneValue = $_POST['caseOneValue'];
+$caseTwoValue = $_POST['caseTwoValue'];
+$caseThreeValue = $_POST['caseThreeValue'];
+$caseFourValue = $_POST['caseFourValue'];
+$i = 0; 
 $arr = get_defined_vars();
 print_r($arr);
-		  
 
 
-while($i<=sizeof($qvalue)-1)
-{	
-	$exam[$examID] = 'exam' . $examID . '.php';       //This generates the file name
-	//$compiled = 'answer' .$i; 					//gives the name of the file to compile
-	//echo $file;								 //This  just echos the filename to be created
 
-	file_put_contents($exam[$examID], $qvalue); 
-	$i++; 
-}
-/*
+
 $url = "https://web.njit.edu/~ac482/examstore.php";
           $fields = array(
           'examID' => $examID,
-          'newValue' => array($newValue),
+          'qvalue' => $qvalue,
+          'newPoints' => $newPoints,
+          'answerOneValue' => $answerOneValue,
+          'answerTwoValue' => $answerTwoValue,
+          'answerThreeValue' => $answerThreeValue,
+          'answerFourValue' => $answerFourValue,
+          'caseOneValue' => $caseOneValue, 
+          'caseTwoValue' => $caseTwoValue, 
+          'caseThreeValue' => $caseThreeValue,
+          'caseFourValue' => $caseFourValue,
           );
 
 //url-ify the data for the POST
@@ -42,8 +51,29 @@ $result = curl_exec($ch);
 //close connection
 curl_close($ch);
 
+/*
+$exam[$examID] = 'exam' . $examID . '.php';       //This generates the file name
+echo $exam[$examID];								 //This  just echos the filename to be created
+
+
+
+while($i<=sizeof($qvalue)-1)
+{	
+	//$compiled = 'answer' .$i; 					//gives the name of the file to compile
+
+	foreach ($qvalue as $key => $value){
+		file_put_contents($exam[$examID], $value, FILE_APPEND);
+		file_put_contents($exam[$examID], $questions, FILE_APPEND);
+		file_put_contents($exam[$examID], $eop, FILE_APPEND);
+		file_put_contents($exam[$examID], $summarypage, FILE_APPEND);
+
+		//file_put_contents($exam[$examID], $value, FILE_APPEND); 
+
+
+	}
+	$i++; 
+}
 */
 
 
  ?>
- 
