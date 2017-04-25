@@ -94,7 +94,6 @@
 // Returns an array with values of the selected (checked) checkboxes in "frm"
 function getSelectedChbox(frm) {
   var selchbox = [];        // array that will store the value of selected checkboxes
-  var pointvals = [];
   // gets all the input tags in frm, and their number
   var inpfields = frm.getElementsByTagName('input');
   var nr_inpfields = inpfields.length;
@@ -105,22 +104,28 @@ function getSelectedChbox(frm) {
     if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true){ 
       selchbox.push(z + ")");
       selchbox.push(inpfields[i].value);
-      selchbox.join(" ");
-      selchbox.push("<br />");
-      selchbox.push("<br />");
-     // inpfields[i].type == 'text'
+
+      z++; 
     }
-    if(inpfields[i].type == 'text')
-    {
-      //pointvals.push(inpfields[i].value);
+
+    if(inpfields[i].type == 'text' && (inpfields[i].value == null || inpfields[i].value == ',') ){ 
+      selchbox.push(null);
+    }
+
+    if (inpfields[i].type == 'text'){
+      if(typeof inpfields[i].value !== null)
+      {
+      selchbox.push("( " + inpfields[i].value + " Points)");
+      selchbox.push("<br />");
+      selchbox.push("<br />");
       //selchbox.push(inpfields[i].value);
       //console.log(selchbox);
-    }
-    z++; 
+      }
+
+      }
   }
 
   return selchbox;
-  return pointvals; 
 }
 
   /* Test this function */
