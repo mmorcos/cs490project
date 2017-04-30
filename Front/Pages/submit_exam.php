@@ -10,6 +10,7 @@ $caseOneValue = $_POST['caseOneValue'];
 $caseTwoValue = $_POST['caseTwoValue'];
 $caseThreeValue = $_POST['caseThreeValue'];
 $caseFourValue = $_POST['caseFourValue'];
+$methodValue = $_POST['methodValue'];
 $i=0; 
 
 
@@ -24,6 +25,7 @@ echo ". [".$key."] = ".$answer."<br>";
 $fields = array(
   'question' => $_POST['q'],
   'answer' => $answer, 
+  'methodValue' => $methodValue,
   'answerOneValue' => $answerOneValue,
   'answerTwoValue' => $answerTwoValue,
   'answerThreeValue' => $answerThreeValue,
