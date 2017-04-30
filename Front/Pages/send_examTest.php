@@ -12,33 +12,33 @@ $caseThreeValue = $_POST['caseThreeValue'];
 $caseFourValue = $_POST['caseFourValue'];
 $i = 0; 
 
+  $ques = implode("\n", $qvalue);
+
+
 $url = "https://web.njit.edu/~ac482/CS490/examstore.php";
           $fields = array(
           'examID' => $examID,
-          'qvalue' => $qvalue,
-          'newPoints' => $newPoints,
-          'answerOneValue' => $answerOneValue,
+          'ques' => $ques,
+       	 'newPoints' => $newPoints,
+       /*     'answerOneValue' => $answerOneValue,
           'answerTwoValue' => $answerTwoValue,
           'answerThreeValue' => $answerThreeValue,
           'answerFourValue' => $answerFourValue,
           'caseOneValue' => $caseOneValue, 
           'caseTwoValue' => $caseTwoValue, 
           'caseThreeValue' => $caseThreeValue,
-          'caseFourValue' => $caseFourValue,
+          'caseFourValue' => $caseFourValue,*/
           );
 
 
 
-foreach ($fields as $key => $value)
-{
-	$ques = implode("\n", $value);
-	echo $ques; 
-}
+
+
 //url-ify the data for the POST
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
 
-/*
+
 
 //open connection
 $ch = curl_init();
@@ -55,7 +55,7 @@ $result = curl_exec($ch);
 //close connection
 curl_close($ch);
 
-
+/*
 $exam[$examID] = 'exam' . $examID . '.php';       //This generates the file name
 echo $exam[$examID];								 //This  just echos the filename to be created
 

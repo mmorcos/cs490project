@@ -40,7 +40,7 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Create Question</a></li>
             <li role="presentation"><a href="create_exam.php">Create Exam</a></li>
-            <li role="presentation"><a href="grade_release.php">Grade Exam</a></li>
+            <li role="presentation"><a href="#">Grade Exam</a></li>
             <li role="presentation"><a href="logout.php" role="button">Logout </a> </li>
 
           </ul>
@@ -49,22 +49,70 @@
       </div>
 
       <div class="jumbotron">
-               <form id="grade_release" class="form-signin" method="post" action="send_grade.php">
-    <h1 class="form-signin-heading text-muted"></h1>
-      <input type="text" name="username" id="username" class="form-control" placeholder="Student to release grade for: " required="" autofocus="">
-      <br >
+      <code style="color:red"> 
+        <?php 
 
-        
-        <!-- new line -->
-       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button" onClick="Confirm(this.form)">Release Grades</button>
+          $url = 'https://web.njit.edu/~ac482/CS490/examretrieve.php';
+          //open connection
+          $ch = curl_init();
+          //set the url, number of POST vars, POST data
+          curl_setopt($ch,CURLOPT_URL, $url);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+          
+          //curl_setopt($ch,CURLOPT_POST, count($fields));
+          //curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+          //execute post
+          $testcase = curl_exec($ch); 
+          curl_close($ch);
+          $testcase = json_decode($testcase, true); 
+
+
+          
+            
+
+
+//test this in a sec
+    /*foreach ($exquest as $examQ) {
+        // we skip question 0
+        if ($qnum != '0'){
+          echo "<tr>" . "<label id='examQ$qnum' for='examQ$qnum'>$examQ</label>" . "</tr><tr>" . "<input type='hidden' id='quest$qnum' name='quest$qnum' value='$examQ'>" . "</tr><br />" . "<textarea id='examQ$qnum' cols='80' rows='20' name='examQ$qnum'></textarea>". "<br /><br />";
+ 
+        }
+      $qnum++;
+*/
+
+          
+         // $numOfQuests = $exquest["questcount"]; 
+          print_r($ques);        
+          print_r($row);
+          $incorrect = "This code is incorrect"; 
+          echo $incorrect;
+        ?> 
+        <br />
+      </code> 
+      <br /> 
+
+      <code style="color:blue"> 
+      <?php 
+        $correct = "this code is correct"; 
+        echo $correct; 
+      ?> 
+      </code>
+      <br />
+      <br />
+      <form method="POST" action="send_updated_grade.php">
+           <textarea id="feedback" name="feedback" rows="7" cols="70" placeholder="Enter Feedback here"></textarea>
+      <br>
+      <br>
+      <label>Enter the student's updated Grade</label>
+      <br>
+      <input type="text" name="updatedGrade" id="updatedGrade">
+      <br> 
+      <br> 
+       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button"> Submit</button>
+      </form>
       </div>
-<script type="text/javascript">
-function Confirm(form){
-alert("Grade Released!"); 
-form.submit();
-document.getElementById("username").reset();
-}
-</script>
+
     
 
       <footer class="footer">

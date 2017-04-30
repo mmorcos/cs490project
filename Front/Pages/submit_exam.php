@@ -1,24 +1,21 @@
 
 <?php 
 $counter = sizeof($_POST['value']);
-$value = $_POST['value'];
+$value = $_POST['nvalue'];
+$answerOneValue = $_POST['answerOneValue'];
+$answerTwoValue = $_POST['answerTwoValue'];
+$answerThreeValue = $_POST['answerThreeValue'];
+$answerFourValue = $_POST['answerFourValue'];
+$caseOneValue = $_POST['caseOneValue'];
+$caseTwoValue = $_POST['caseTwoValue'];
+$caseThreeValue = $_POST['caseThreeValue'];
+$caseFourValue = $_POST['caseFourValue'];
 $i=0; 
-while($i<=sizeof($value)-1)
-{	
-	$file[$i] = 'answer' . $i . '.java';       //This generates the file name
-	$compiled = 'answer' .$i; 					//gives the name of the file to compile
-	echo $file;								 //This  just echos the filename to be created
-	file_put_contents($file[$i], "public class answer", FILE_APPEND);
-	file_put_contents($file[$i], $i, FILE_APPEND);
-	file_put_contents($file[$i], "{", FILE_APPEND);
-	file_put_contents($file[$i], $value[$i], FILE_APPEND); //This saves the files with their corresponding answers
-	file_put_contents($file[$i], "}", FILE_APPEND);
-	exec("javac $file[$i]");
-	$result[$i] = shell_exec("java $compiled");
-	$i++; 
-}
 
-$url = "https://web.njit.edu/~st456/grade2.php";
+
+
+
+$url = "https://web.njit.edu/~ac482/CS490/grading.php";
 
 
 foreach ($value as $key => $answer) {
@@ -26,8 +23,18 @@ echo ". [".$key."] = ".$answer."<br>";
  }
 $fields = array(
   'question' => $_POST['q'],
-  'result' => $result[$i],
+  'answer' => $answer, 
+  'answerOneValue' => $answerOneValue,
+  'answerTwoValue' => $answerTwoValue,
+  'answerThreeValue' => $answerThreeValue,
+  'answerFourValue' => $answerFourValue,
+  'caseOneValue' => $caseOneValue, 
+  'caseTwoValue' => $caseTwoValue, 
+  'caseThreeValue' => $caseThreeValue,
+  'caseFourValue' => $caseFourValue,
 );
+
+
 //$send = json_encode($fields);
 //url-ify the data for the POST
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
