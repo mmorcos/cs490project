@@ -27,52 +27,56 @@
           {
             foreach ($value[0] as $key => $nvalue) 
               {
-               echo "<tr>" . "<label id ='value$key' for='value$key'>$nvalue</label>" . "<tr><tr>" . "<input type='hidden' id='quest$key' name='quest$key' value='$nvalue'>" . "</tr><br />" . "<textarea id='value[$key]' cols='80' rows='20' name='value[$key]'></textarea>" . "<br /><br />"; 
+               echo "<tr>" . "<label id ='nvalue$key' for='nvalue$key'>$nvalue</label>" . "<tr><tr>" . "<input type='hidden' id='quest[]' name='quest[]' value='$nvalue'>" . "</tr><br />" . "<textarea id='nvalue[]' cols='80' rows='20' name='nvalue[]'></textarea>" . "<br /><br />"; 
 
               }
             foreach ($value[1] as $methodKey => $methodValue) 
             {
 
-                echo "<input type='hidden' id='method$methodKey' value='$methodValue'>";
+                echo "<input type='hidden' id='method[]' name='method[]' value='$methodValue'>";
  
             }
-            foreach ($value[2] as $caseOneKey => $caseOneValue) 
+            foreach ($value[2] as $pointKey => $pointValue)
             {
-              echo "<input type='hidden' id='case$caseOneKey' value='$caseOneValue'>";
+              echo "<input type='hidden' id='points[]' name='points[]' value='$pointValue'>";
             }
-            foreach ($value[3] as $caseTwokey => $caseTwoValue) 
+            foreach ($value[3] as $caseOneKey => $caseOneValue) 
             {
-              echo "<input type='hidden' id='case$caseTwoKey' value='$caseTwoValue'>";
+              echo "<input type='hidden' id='caseOne[]' name='caseOne[]' value='$caseOneValue'>";
+            }
+            foreach ($value[4] as $caseTwokey => $caseTwoValue) 
+            {
+              echo "<input type='hidden' id='caseTwo[]' name='caseTwo[]' value='$caseTwoValue'>";
             }
 
-            foreach($value[4] as $caseThreeKey => $caseThreeValue)
+            foreach($value[5] as $caseThreeKey => $caseThreeValue)
             {
-              echo "<input type='hidden' id='case$caseThreeKey' value='$caseThreeValue'>"
+              echo "<input type='hidden' id='caseThree[]' name='caseThree[]' value='$caseThreeValue'>";
 
             }
-            foreach($value[5] as $caseFourKey => $caseFourValue)
+            foreach($value[6] as $caseFourKey => $caseFourValue)
             {
-              echo "<input type='hidden' id='case$caseFourKey' value='$caseFourValue'>";
+              echo "<input type='hidden' id='caseFour[]' name='caseFour[]' value='$caseFourValue'>";
 
             }
-            foreach($value[6] as $answerOneKey => $answerOneValue)
+            foreach($value[7] as $answerOneKey => $answerOneValue)
             {
-              echo "<input type='hidden' id='answer$answerOneKey' value='$answerOneValuen'>";
+              echo "<input type='hidden' id='answerOne[]' name='answerOne[]' value='$answerOneValuen'>";
 
             }
-            foreach($value[7] as $answerTwoKey => $answerTwoValue)
+            foreach($value[8] as $answerTwoKey => $answerTwoValue)
             {
-              echo "<input type='hidden' id='answer$answerTwoKeyw' value='$answerTwoValue'>";
+              echo "<input type='hidden' id='answerTwo[]' name='answerTwo[]' value='$answerTwoValue'>";
 
             }
             foreach($value[9] as $answerThreeKey => $answerThreeValue)
             {
-              echo "<input type='hidden' id='answer$answerThreeKey' value='$answerThreeValue'>";
+              echo "<input type='hidden' id='answerThree[]' name='answerThree[]' value='$answerThreeValue'>";
 
             }
             foreach($value[10] as $answerFourKey => $answerFourValue)
             {
-              echo "<input type='hidden' id='answer$answerFourKey' value='$answerFourValue'>";
+              echo "<input type='hidden' id='answerFour[]' id='answerFour[]' value='$answerFourValue'>";
 
             }
 

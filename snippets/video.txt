@@ -1,0 +1,20 @@
+public static addThree (x, y, z){
+	System.out.println(x+y+z);
+
+}
+
+
+
+public static cubelt (x){
+	System.out.println(x*x*x);
+
+}
+
+
+public static makes10 (a, c){
+	if ((a+c)==10){
+	bool flag = true; 
+	}
+	return flag; 
+
+}
