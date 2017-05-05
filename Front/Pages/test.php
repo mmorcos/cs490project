@@ -88,18 +88,18 @@ $i = 0;
      }
      //echo $size; 
 $question = array(); 
-for ($i=0; $i<$size;$i++)
-{
 
-  $test = $summary[1][1];
+
+  $test = $summary[$i][$i][$i];
   foreach ($test as $key => $value) 
   {
+    array_push($question, $value);
    
    //array_push($value);
 
   }
 
-  print_r($value);
+echo $question; 
   echo "<br>"; 
 
 
@@ -228,7 +228,7 @@ for ($i=0; $i<$size;$i++)
                     echo $parenBracketValue; 
                     echo "<br>";
                     echo $questionValue; */
-          }
+          
        ?> 
 
        <br> 

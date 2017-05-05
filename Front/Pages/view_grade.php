@@ -68,29 +68,76 @@
           curl_close($ch);
           $summary = json_decode($summary, true); 
 
-          print_r($summary);
 
           if (isset($summary))
           {
 
             foreach ($summary as $key => $value) 
             {
-                foreach($value[0] as $key => $correctAnswer)
+                foreach($value[0] as $questionKey => $questionValue)
                   {
-                    echo "<code style='color:green'>" . $correctAnswer . "</code>";
+                    echo "Question ". $questionKey . ": ". $questionValue;
                     echo "<br />";
+                    echo "<br>";
                   }
-                foreach ($value[1] as $incorrectKey => $incorrectAnswer) 
+                foreach ($value[1] as $answerKey => $answerValue) 
                 {
-                  echo "<code style='color:red'>" . $incorrectAnswer . "</code>";
+                  echo "Answer " . $answerKey. ": " . "<code style='color:orange'>".  $answerValue . "</code>";
                   echo "<br />"; 
+                  echo "<br>";
                 }
-                foreach ($value[2] as $pointsKey => $pointsFinal) 
+                foreach ($value[2] as $questionScoreKey => $questionScoreValue) 
                 {
-                  echo "Your final grade is: " . $pointsFinal; 
+                  //something's off here....
+                  echo "Question " . $questionScoreKey . " was worth " . $questionScoreValue . " points. ";
                 }
-            }
+                foreach ($value[3] as $compileStatusKey => $compileStatusValue)
+                  {
+                    echo $compileStatusValue; 
+                    echo "<br>";
+                    echo "<br>";
+                  }
+                foreach ($value[4] as $compileGradeKey => $compileGradeValue)
+                  {
+                    echo $compileGradeValue; 
+                    echo "<br>";
+                    echo "<br>";
+                  }
 
+                foreach ($value[5] as $caseGradeKey => $caseGradeValue)
+                {
+                  echo $caseGradeValue; 
+                  echo "<br>";
+                  echo "<br>";
+                }
+                foreach ($value[6] as $parenBracketStatusKey => $parenBracketStatusValue)
+                {
+                  echo $parenBracketStatusValue; 
+                  echo "<br>";
+                  echo "<br>";
+                }
+                foreach ($value[7] as $parenBracketGradeKey => $parenBracketGradeValue)
+                {
+                  echo $parenBracketGradeValue; 
+                  echo "<br>";
+                  echo "<br>";
+                }
+                foreach ($value[8] as $gradeKey => $gradeValue)
+                  {
+                    echo "You scored a: " . $gradeValue; 
+                    echo "<br>";
+                    echo "<br>";
+                  }
+                foreach ($value[9] as $maxpointsKey => $maxpointsValue)
+                  {
+                    echo "The possible total grade is: " . $gradeValue . "%"; 
+                    echo "<br>";
+                    echo "<br>";
+                  }
+
+
+            }
+echo $questionValue; 
 
           }
           else

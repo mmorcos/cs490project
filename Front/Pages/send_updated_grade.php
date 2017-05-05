@@ -15,7 +15,7 @@ $feedback = $_POST['feedback'];
 
 
 $i=0; 
-
+// $score = array_sum($feedback[2][2][$i]);
 
 $vals = array();
 $count = 0;
@@ -27,7 +27,6 @@ $count--;
 $count = $count/2;
 $vals["count"] = $count;
 $vals = json_encode($vals);
-
 
 
 $url = "https://web.njit.edu/~ac482/CS490/storeupdatedgrade.php";
