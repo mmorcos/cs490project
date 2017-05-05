@@ -1,9 +1,9 @@
 
 <?php 
 $questionValue = $_POST['questionValue'];
-$answerValue = $_POSTanswerValue
+$answerValue = $_POST['answerValue'];
 $questionGrade = $_POST['questionGrade'];
-$questionScoreValue = $_POST['questionScoreValue'];
+$questionScore = $_POST['questionScore'];
 $compileStatusValue = $_POST['compileStatusValue'];
 $compileGradeValue = $_POST['compileGradeValue'];
 $caseStatusValue = $_POST['caseStatusValue'];
@@ -12,7 +12,6 @@ $parenBracketValue = $_POST['parenBracketValue'];
 $bracketValue = $_POST['bracketValue'];
 $gradeValue = $_POST['gradeValue'];
 $feedback = $_POST['feedback'];
-
 
 
 $i=0; 
@@ -54,6 +53,7 @@ curl_setopt($ch,CURLOPT_URL, $url);
 curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
 //curl_setopt($ch,CURLOPT_POST, count($fields));
 curl_setopt($ch,CURLOPT_POSTFIELDS, $vals);
+
 
 //execute post
 $result = curl_exec($ch);

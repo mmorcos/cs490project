@@ -70,7 +70,6 @@
 
 
 
-
             foreach ($summary as $key => $value) 
             {
                  foreach($value[0] as $preQuestionKey => $preQuestionValue)
@@ -80,8 +79,6 @@
 
                       echo "Question ". $questionKey . ": ". $questionValue;
                       echo "<input type='hidden' id='question[]' name='question[]' value='$questionValue'>";
-                      echo "<br>";
-                      echo "<input type='text' id='questionGrade[]' name='questoinGrade[]' placeholder='Enter Updated Grade'>";
                       echo "<br />";
                       echo "<br />";
 
@@ -106,7 +103,10 @@
                     foreach ($preQuestionScoreValue as $questionScoreKey => $questionScoreValue)
                       {
                         echo "Question " . $questionScoreKey . " was worth " . $questionScoreValue . " points.";
-                        echo "<input type='hidden' id='questionScore[]' name='questionScore[]' value='$questionScoreValue'>";
+                        echo "<br>";
+                        echo "Enter updated points if you desire.";
+                        echo "<br>";
+                        echo "<input type='text' id='questionScore[]' size='4' name='questionScore[]'>";
                         echo "<br />"; 
                         echo "<br />"; 
                       }
@@ -188,6 +188,10 @@
                     {
                       echo "The student's total grade is: " . $gradeValue . "%"; 
                       echo "<input type='hidden' id='grade[]' name='grade[]' value='$gradeValue'>";
+                    }
+                  foreach($value[10] as $maxpointskey => $maxpoints)
+                    {
+                      echo "<input type='hidden' id='maxpoints' name='maxpoints' value='$maxpoints'>";
                     }
 
 
