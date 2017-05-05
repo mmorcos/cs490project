@@ -32,7 +32,7 @@
       <div class="jumbotron">
         <h1>Welcome!</h1>
         <p class="lead">Choose from the following </p>
-        <p><a class="btn btn-lg btn-success" href="student_exam.php" role="button">Exam <?php $examID ?> </a></p>
+        <p><a class="btn btn-lg btn-success" href="student_exam.php" role="button">Exam 1<?php $examID ?> </a></p>
 
 
       </div>

@@ -77,7 +77,7 @@
             include_once 'recieve_exam.php';
             ?>
 
-                <input type="text" name="examID" id="examID" class="form-control" placeholder="Enter an exam ID to save this exam" autofocus="">
+                <input type="text" name="examID" id="examID" class="form-control" placeholder="Enter an exam ID to save this exam">
       <br />
       <input type="button" value="Update Preview" id="btntest" />
       <br />
@@ -123,7 +123,7 @@ document.getElementById('btntest').onclick = function(){
  for (var i=0; i<selchb.length; i++){
   document.getElementById("demo").innerHTML = selchb; //this should put everything checked into the preview window
   }
-
+scroll(0,0);
 //console.log(selchb.join('\r\n'));
 }
 //-->

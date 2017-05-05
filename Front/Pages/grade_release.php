@@ -49,10 +49,12 @@
       </div>
 
       <div class="jumbotron">
-      <code style="color:red"> 
-        <?php 
 
-          $url = 'https://web.njit.edu/~ac482/CS490/examretrieve.php';
+      <form method="POST" action="send_updated_grade.php">
+
+
+ <?php 
+          $url = 'https://web.njit.edu/~ac482/CS490/graderetrieve.php';
           //open connection
           $ch = curl_init();
           //set the url, number of POST vars, POST data
@@ -62,54 +64,148 @@
           //curl_setopt($ch,CURLOPT_POST, count($fields));
           //curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
           //execute post
-          $testcase = curl_exec($ch); 
+          $summary = curl_exec($ch); 
           curl_close($ch);
-          $testcase = json_decode($testcase, true); 
+          $summary = json_decode($summary, true); 
 
 
-          
-            
 
 
-//test this in a sec
-    /*foreach ($exquest as $examQ) {
-        // we skip question 0
-        if ($qnum != '0'){
-          echo "<tr>" . "<label id='examQ$qnum' for='examQ$qnum'>$examQ</label>" . "</tr><tr>" . "<input type='hidden' id='quest$qnum' name='quest$qnum' value='$examQ'>" . "</tr><br />" . "<textarea id='examQ$qnum' cols='80' rows='20' name='examQ$qnum'></textarea>". "<br /><br />";
- 
-        }
-      $qnum++;
-*/
+            foreach ($summary as $key => $value) 
+            {
+                 foreach($value[0] as $preQuestionKey => $preQuestionValue)
+                  {
+                     foreach ($preQuestionValue as $questionKey => $questionValue)
+                     {
 
-          
-         // $numOfQuests = $exquest["questcount"]; 
-          print_r($ques);        
-          print_r($row);
-          $incorrect = "This code is incorrect"; 
-          echo $incorrect;
-        ?> 
-        <br />
-      </code> 
-      <br /> 
+                      echo "Question ". $questionKey . ": ". $questionValue;
+                      echo "<input type='hidden' id='question[]' name='question[]' value='$questionValue'>";
+                      echo "<br>";
+                      echo "<input type='text' id='questionGrade[]' name='questoinGrade[]' placeholder='Enter Updated Grade'>";
+                      echo "<br />";
+                      echo "<br />";
 
-      <code style="color:blue"> 
-      <?php 
-        $correct = "this code is correct"; 
-        echo $correct; 
-      ?> 
-      </code>
-      <br />
-      <br />
-      <form method="POST" action="send_updated_grade.php">
+                     }
+
+                  }
+                  foreach ($value[1] as $preAnswerKey => $preAnswerValue) 
+                  {
+                    foreach ($preAnswerValue as $answerKey => $answerValue) 
+                    {
+                    echo "Answer " . $answerKey. ": " . "<code style='color:black'>".  $answerValue . "</code>";
+                    echo "<input type='hidden' id='answer[]' name='answer[]' value='$answerValue'>";
+                    echo "<br />";
+                    echo "<br />";
+
+                    }
+                  
+
+                  }
+                  foreach ($value[2] as $preQuestionScoreKey => $preQuestionScoreValue)
+                  {
+                    foreach ($preQuestionScoreValue as $questionScoreKey => $questionScoreValue)
+                      {
+                        echo "Question " . $questionScoreKey . " was worth " . $questionScoreValue . " points.";
+                        echo "<input type='hidden' id='questionScore[]' name='questionScore[]' value='$questionScoreValue'>";
+                        echo "<br />"; 
+                        echo "<br />"; 
+                      }
+
+                  }
+
+
+
+                  foreach ($value[3] as $preCompileStatusKey => $preCompileStatusValue) 
+                  {
+                    foreach ($preCompileStatusValue as $compileStatuskey => $compileStatusValue)
+                    {
+                      echo $compileStatusValue;
+                      echo "<input type='hidden' id='compileStatus[]' name='compileStatus[]' value='$compileStatusValue'>";
+                      echo "<br />";
+                      echo "<br />";
+                    }
+                  }
+
+                  foreach ($value[4] as $preCompileGradeKey => $preCompileGradeValue) 
+                  {
+                    foreach ($preCompileGradeValue as $compileGradeKey => $compileGradeValue) 
+                    {
+                      echo $compileGradeValue;
+                      echo "<input type='hidden' id='compileGrade[]' name='compileGrade[]' value='$compileGradeValue'>";
+                      echo "<br />";
+                      echo "<br />";
+
+                    }
+
+                  }
+
+                  foreach ($value[5] as $preCaseStatusKey => $preCaseStatusValue) 
+                  {
+                    foreach ($preCaseStatusValue as $caseStatusKey => $caseStatusValue) 
+                    {
+                      echo $caseStatusValue; 
+                      echo "<input type='hidden' id='caseStatus[]' name='caseStatus[]' value='$caseStatusValue'>";
+                      echo "<br />";
+                      echo "<br />";
+                    }
+
+                  }
+
+                  foreach ($value[6] as $preCaseGradeKey => $preCaseGradeValue)
+                  {
+                    foreach ($preCaseGradeValue as $caseGradeKey => $caseGradeValue)
+                    {
+                      echo $caseGradeValue;
+                      echo "<input type='hidden' id='caseGrade[]' name='caseGrade[]' value='$caseGradeValue'>";
+                      echo "<br />";
+                      echo "<br />";
+                    }
+                  }
+                  foreach ($value[7] as $preParenBracketKey => $preParenBracketValue) 
+                  {
+                    foreach ($preParenBracketValue as $parenBracketKey => $parenBracketValue)
+                    {
+                      echo $parenBracketValue;
+                      echo "<input type='hidden' id='parenBracket[]' name='parenBracket[]' value='$parenBracketValue'>";
+                      echo "<br />";
+                      echo "<br />";
+                    }
+                  }
+
+                  foreach ($value[8] as $preBracketKey => $preBracketValue)
+                  {
+                    foreach ($preBracketValue as $bracketKey => $bracketValue) 
+                    {
+                      echo $bracketValue; 
+                      echo "<input type='hidden' id='bracketGrade[]' name='bracketGrade[]' value='$bracketValue'>";
+                      echo "<br />";
+                      echo "<br />";
+
+                    }
+                  }
+
+                  foreach ($value[9] as $gradeKey => $gradeValue)
+                    {
+                      echo "The student's total grade is: " . $gradeValue . "%"; 
+                      echo "<input type='hidden' id='grade[]' name='grade[]' value='$gradeValue'>";
+                    }
+
+
+          }
+       ?> 
+
+       <br> 
+       <br>
+
            <textarea id="feedback" name="feedback" rows="7" cols="70" placeholder="Enter Feedback here"></textarea>
       <br>
       <br>
-      <label>Enter the student's updated Grade</label>
+    <!--    <label>Enter the student's updated total grade</label>
       <br>
-      <input type="text" name="updatedGrade" id="updatedGrade">
+     <input type="text" name="finalGrade" id="finalGrade"> -->
       <br> 
       <br> 
-       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button"> Submit</button>
+       <button class="btn btn-lg btn-success" name="Submit" type="submit" role="button"> Release</button>
       </form>
       </div>
 

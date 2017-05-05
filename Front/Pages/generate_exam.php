@@ -61,7 +61,7 @@
             }
             foreach($value[7] as $answerOneKey => $answerOneValue)
             {
-              echo "<input type='hidden' id='answerOne[]' name='answerOne[]' value='$answerOneValuen'>";
+              echo "<input type='hidden' id='answerOne[]' name='answerOne[]' value='$answerOneValue'>";
 
             }
             foreach($value[8] as $answerTwoKey => $answerTwoValue)

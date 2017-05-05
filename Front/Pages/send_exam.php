@@ -1,95 +1,83 @@
-<?php 
-
+<?php
 $examID = $_POST['examID'];
-$questionValue = $_POST['questionValue']; 
-$difficultyValue = $_POST['difficultyValue'];
+$qvalue = $_POST['q']; 
 $newPoints = $_POST['newPoints'];
-$pointsValue = $_POST['pointsValue'];
-$categoryValue = $_POST['categoryValue'];
-$count = 0; 
+$answerOneValue = $_POST['answerOneValue'];
+$answerTwoValue = $_POST['answerTwoValue'];
+$answerThreeValue = $_POST['answerThreeValue'];
+$answerFourValue = $_POST['answerFourValue'];
+$caseOneValue = $_POST['caseOneValue'];
+$caseTwoValue = $_POST['caseTwoValue'];
+$caseThreeValue = $_POST['caseThreeValue'];
+$caseFourValue = $_POST['caseFourValue'];
+$i = 0; 
+
+  $ques = implode("\n", $qvalue);
 
 
-              foreach ($question as $questionKey => $questionValue){
-                    //$question is pulled out 
-               }
-
-               foreach ($points as $pointsKey => $pointsValue){
-                   //$points is pulled out 
-               }
-
-               foreach ($newPoints as $newPointsKey=> $newPointsValue)
-
-               foreach ($category as $categoryKey => $categoryValue){
-                    //$category is pulled out
-               }
-
-               foreach ($difficulty as $difficultyKey => $difficultyValue){
-                    //$difficulty is pulled out
-               }
-
-/*
-	foreach ($qvalue as $question => $value) {	
-  $count=$count++; 
-  $newValue[$count] = $value; 
-    }		*/
-
-    $ques = implode("\n", $qvalue);
-
-
-
-		  
-
-     $url = 'https://web.njit.edu/~ac482/CS490/examstore.php';
-          //open connection
-
+$url = "https://web.njit.edu/~ac482/CS490/examstore.php";
           $fields = array(
           'examID' => $examID,
-          'newValue' => $ques,
-          'count' => $count, 
-          'difficulty' => $difficulty,
+          'ques' => $ques,
+         'newPoints' => $newPoints,
+       /*     'answerOneValue' => $answerOneValue,
+          'answerTwoValue' => $answerTwoValue,
+          'answerThreeValue' => $answerThreeValue,
+          'answerFourValue' => $answerFourValue,
+          'caseOneValue' => $caseOneValue, 
+          'caseTwoValue' => $caseTwoValue, 
+          'caseThreeValue' => $caseThreeValue,
+          'caseFourValue' => $caseFourValue,*/
           );
 
-          
 
+
+
+
+//url-ify the data for the POST
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
 
-          $ch = curl_init();
-
-          //set the url, number of POST vars, POST data
-          curl_setopt($ch,CURLOPT_URL, $url);
-          curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
-          curl_setopt($ch,CURLOPT_POST, count($fields));
-          curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-        
-          //curl_setopt($ch,CURLOPT_POST, count($fields));
-          //curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-
-          //execute post
-          $exquest = curl_exec($ch); 
-          curl_close($ch);
-          $exquest = json_decode($exquest, true); 
-
-echo "<script>setTimeout(\"location.href = 'pfview.html';\",1);</script>";
 
 
+//open connection
+$ch = curl_init();
 
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
+curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+
+//execute post
+$result = curl_exec($ch);
+//close connection
+curl_close($ch);
 
 /*
+$exam[$examID] = 'exam' . $examID . '.php';       //This generates the file name
+echo $exam[$examID];                 //This  just echos the filename to be created
 
-		foreach ($exquest as $examQ) {
-				// we skip question 0
-				if ($qnum != '0'){
-  				echo "<tr>" . "<label id='examQ$qnum' for='examQ$qnum'>$examQ</label>" . "</tr><tr>" . "<input type='hidden' id='quest$qnum' name='quest$qnum' value='$examQ'>" . "</tr><br />" . "<textarea id='examQ$qnum' cols='80' rows='20' name='examQ$qnum'></textarea>". "<br /><br />";
- 
-				}
-			$qnum++;
 
+
+while($i<=sizeof($qvalue)-1)
+{ 
+  //$compiled = 'answer' .$i;           //gives the name of the file to compile
+
+  foreach ($qvalue as $key => $value){
+    file_put_contents($exam[$examID], $value, FILE_APPEND);
+    file_put_contents($exam[$examID], $questions, FILE_APPEND);
+    file_put_contents($exam[$examID], $eop, FILE_APPEND);
+    file_put_contents($exam[$examID], $summarypage, FILE_APPEND);
+
+    //file_put_contents($exam[$examID], $value, FILE_APPEND); 
+
+
+  }
+  $i++; 
 }
-
 */
 
 
-
-
-?>
+ ?>
