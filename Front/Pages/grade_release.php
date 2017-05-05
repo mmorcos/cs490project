@@ -38,9 +38,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Create Question</a></li>
+            <li role="presentation"><a href="questionform.html">Create Question</a></li>
             <li role="presentation"><a href="create_exam.php">Create Exam</a></li>
-            <li role="presentation"><a href="#">Grade Exam</a></li>
+            <li role="presentation" class="active"><a href="#">Grade Exam</a></li>
             <li role="presentation"><a href="logout.php" role="button">Logout </a> </li>
 
           </ul>
@@ -74,13 +74,15 @@
             {
                  foreach($value[0] as $preQuestionKey => $preQuestionValue)
                   {
+
                      foreach ($preQuestionValue as $questionKey => $questionValue)
                      {
-
+                      $questionKey+=1; 
                       echo "Question ". $questionKey . ": ". $questionValue;
                       echo "<input type='hidden' id='question[]' name='question[]' value='$questionValue'>";
                       echo "<br />";
                       echo "<br />";
+
 
                      }
 
@@ -89,10 +91,12 @@
                   {
                     foreach ($preAnswerValue as $answerKey => $answerValue) 
                     {
+                    $answerKey+=1; 
                     echo "Answer " . $answerKey. ": " . "<code style='color:black'>".  $answerValue . "</code>";
                     echo "<input type='hidden' id='answer[]' name='answer[]' value='$answerValue'>";
                     echo "<br />";
                     echo "<br />";
+                    $ansval[] = $answerValue;
 
                     }
                   
@@ -102,7 +106,8 @@
                   {
                     foreach ($preQuestionScoreValue as $questionScoreKey => $questionScoreValue)
                       {
-                        echo "Question " . $questionScoreKey . " was worth " . $questionScoreValue . " points.";
+                        $questionScoreKey+=1; 
+                        echo "Question " . $questionScoreKey . " scored " . $questionScoreValue . " points.";
                         echo "<br>";
                         echo "Enter updated points if you desire.";
                         echo "<br>";
@@ -130,7 +135,8 @@
                   {
                     foreach ($preCompileGradeValue as $compileGradeKey => $compileGradeValue) 
                     {
-                      echo $compileGradeValue;
+                      $compileGradeKey+=1; 
+                      echo "For question " . $compileGradeKey . $compileGradeValue;
                       echo "<input type='hidden' id='compileGrade[]' name='compileGrade[]' value='$compileGradeValue'>";
                       echo "<br />";
                       echo "<br />";
@@ -155,7 +161,8 @@
                   {
                     foreach ($preCaseGradeValue as $caseGradeKey => $caseGradeValue)
                     {
-                      echo $caseGradeValue;
+                      $caseGradeKey+=1; 
+                      echo "For question " . $caseGradeKey . $caseGradeValue;
                       echo "<input type='hidden' id='caseGrade[]' name='caseGrade[]' value='$caseGradeValue'>";
                       echo "<br />";
                       echo "<br />";
@@ -165,7 +172,8 @@
                   {
                     foreach ($preParenBracketValue as $parenBracketKey => $parenBracketValue)
                     {
-                      echo $parenBracketValue;
+                      $parenBracketKey+=1; 
+                      echo "For question " . $parenBracketKey . ": " . $parenBracketValue;
                       echo "<input type='hidden' id='parenBracket[]' name='parenBracket[]' value='$parenBracketValue'>";
                       echo "<br />";
                       echo "<br />";
@@ -176,7 +184,8 @@
                   {
                     foreach ($preBracketValue as $bracketKey => $bracketValue) 
                     {
-                      echo $bracketValue; 
+                      $bracketKey+=1; 
+                      echo "For question " . $bracketKey . $bracketValue; 
                       echo "<input type='hidden' id='bracketGrade[]' name='bracketGrade[]' value='$bracketValue'>";
                       echo "<br />";
                       echo "<br />";

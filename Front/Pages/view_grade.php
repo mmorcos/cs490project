@@ -38,8 +38,7 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="student_exam.php">Take Exam </a></li>
-            <li role="presentation"><a href="view_grade.php">View Grade</a></li>
+            <li role="presentation" class="active"><a href="view_grade.php">View Grade</a></li>
             <li role="presentation"><a href="logout.php" role="button">Logout </a> </li
           </ul>
         </nav>
@@ -68,8 +67,8 @@
           curl_close($ch);
           $summary = json_decode($summary, true); 
 
-
-          if (isset($summary))
+          $count = 0; 
+          if (sizeof($summary)!=0)
           {
 
             foreach ($summary as $key => $value) 
@@ -88,31 +87,40 @@
                 }
                 foreach ($value[2] as $questionScoreKey => $questionScoreValue) 
                 {
-                  //something's off here....
-                  echo "Question " . $questionScoreKey . " was worth " . $questionScoreValue . " points. ";
+                  $questionScoreKey +=1; 
+                  echo "You recieved " . $questionScoreValue . " points ". " on question " . $questionScoreKey;
+                  echo "<br>";
+                  echo "<br>";
+
                 }
-                foreach ($value[3] as $compileStatusKey => $compileStatusValue)
+               foreach ($value[3] as $compileStatusKey => $compileStatusValue)
                   {
                     echo $compileStatusValue; 
                     echo "<br>";
                     echo "<br>";
                   }
-                foreach ($value[4] as $compileGradeKey => $compileGradeValue)
+
+               foreach ($value[4] as $compileGradeKey => $compileGradeValue)
                   {
-                    echo $compileGradeValue; 
+                    $compileGradeKey+=1; 
+
+                    echo "For question " . $compileGradeKey . $compileGradeValue; 
                     echo "<br>";
                     echo "<br>";
+
                   }
 
-                foreach ($value[5] as $caseGradeKey => $caseGradeValue)
+               foreach ($value[5] as $caseStatusKey => $caseStatusValue)
                 {
-                  echo $caseGradeValue; 
-                  echo "<br>";
+                  $caseStatusKey+=1; 
+                  echo "For question " . $caseStatusKey . $caseStatusValue; 
+                  echo "test";
                   echo "<br>";
                 }
-                foreach ($value[6] as $parenBracketStatusKey => $parenBracketStatusValue)
+               foreach ($value[6] as $parenBracketStatusKey => $parenBracketStatusValue)
                 {
-                  echo $parenBracketStatusValue; 
+                  $parenBracketStatusKey+=1; 
+                  echo "For question " . $parenBracketStatusKey .$parenBracketStatusValue; 
                   echo "<br>";
                   echo "<br>";
                 }
@@ -122,22 +130,15 @@
                   echo "<br>";
                   echo "<br>";
                 }
-                foreach ($value[8] as $gradeKey => $gradeValue)
-                  {
-                    echo "You scored a: " . $gradeValue; 
-                    echo "<br>";
-                    echo "<br>";
-                  }
-                foreach ($value[9] as $maxpointsKey => $maxpointsValue)
-                  {
-                    echo "The possible total grade is: " . $gradeValue . "%"; 
-                    echo "<br>";
-                    echo "<br>";
-                  }
-
 
             }
-echo $questionValue; 
+
+            echo "Final Grade:  " . $value[9] . "%";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+;
+            echo "Comments from your caring professor: " . "<br>" . $value[10]; 
 
           }
           else

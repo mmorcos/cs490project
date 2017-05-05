@@ -78,7 +78,7 @@ $result = curl_exec($ch);
 
 //close connection
 curl_close($ch);
-echo "Your exam has been submitted. Please wait for your instructor to post your grade";
+header("Location: sview.php");
 
 
 ?>

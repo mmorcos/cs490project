@@ -38,7 +38,11 @@
             }
             foreach ($value[2] as $pointKey => $pointValue)
             {
+              echo "The above question is worth " . $pointValue . " points.";
               echo "<input type='hidden' id='points[]' name='points[]' value='$pointValue'>";
+              echo "<br>";
+              echo "<br>";
+
             }
             foreach ($value[3] as $caseOneKey => $caseOneValue) 
             {

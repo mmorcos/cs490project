@@ -78,6 +78,7 @@ while($i<=sizeof($qvalue)-1)
   $i++; 
 }
 */
+header("Location: pfview.html");
 
 
  ?>

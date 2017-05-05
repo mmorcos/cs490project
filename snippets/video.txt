@@ -11,6 +11,10 @@ public static cubelt (x){
 }
 
 
+public static int factorial (int n) { if (n==1) return 1; return n*factorial(n-1); }
+
+
+
 public static makes10 (a, c){
 	if ((a+c)==10){
 	bool flag = true; 

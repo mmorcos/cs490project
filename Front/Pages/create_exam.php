@@ -57,6 +57,15 @@
           <body>
     <div class="container">
       <div class="header clearfix">
+      <nav> 
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="questionform.html">Create Question</a></li>
+            <li role="presentation" class="active"><a href="create_exam.php">Create Exam</a></li>
+            <li role="presentation"><a href="release_grade.php">Grade Exam</a></li>
+            <li role="presentation"><a href="logout.php" role="button">Logout </a> </li>
+
+          </ul>
+        </nav>
   
         <h3 class="text-muted">Select Questions</h3>
       </div>

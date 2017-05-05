@@ -25,7 +25,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 $result = curl_exec($ch);
 //close connection
 curl_close($ch);
-
+header("Location: pfview.html");
 
 
  ?>

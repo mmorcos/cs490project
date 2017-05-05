@@ -89,19 +89,16 @@ $i = 0;
      //echo $size; 
 $question = array(); 
 
-
-  $test = $summary[$i][$i][$i];
-  foreach ($test as $key => $value) 
+for ($i=0; $i<$size-1; $i++)
+{
+  $question = $summary[0][0][0]; 
+  foreach ($question as $questionKey => $questionValue)
   {
-    array_push($question, $value);
-   
-   //array_push($value);
-
+   $question.= $questionValue;
+   echo "shit";
   }
-
-echo $question; 
-  echo "<br>"; 
-
+  echo $question; 
+}
 
 /*
 

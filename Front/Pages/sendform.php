@@ -21,6 +21,7 @@
 	  'answer4' => $_POST['answer4'],
     );
     
+
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
 
@@ -40,6 +41,7 @@ curl_close($ch);
 
 //new line added
 echo "<script>setTimeout(\"location.href = 'questionform.html';\",1);</script>";
+
 
  ?>
  
