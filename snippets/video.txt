@@ -1,11 +1,11 @@
-public static addThree (x, y, z){
+public static addThree (int x, int y, int z){
 	System.out.println(x+y+z);
 
 }
 
 
 
-public static cubelt (x){
+public static int cubelt (int x){
 	System.out.println(x*x*x);
 
 }
@@ -15,10 +15,19 @@ public static int factorial (int n) { if (n==1) return 1; return n*factorial(n-1
 
 
 
-public static makes10 (a, c){
-	if ((a+c)==10){
-	bool flag = true; 
-	}
-	return flag; 
+public static boolean makes10 (int a, int b){
+	return (a==10 || b==10 || a+b==10); 
 
 }
+
+new question to add
+
+method: multFour
+points: 10
+category: logic
+parameter: w x y z
+test case: multFour(1,1,1,1)
+test answer: 1
+
+
+
